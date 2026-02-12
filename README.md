@@ -16,8 +16,9 @@
 |04  | javascript | vanilla - programing language         |
 ---
 
-|Drive| --- | Vercel |
-|[ADSO Files DRIVE](https://tinyurl.com/wnkk334u) |  ---  | [VERCERL URL](https://adso3314566-lake.vercel.app/) |
+
+[ADSO Files DRIVE](https://tinyurl.com/wnkk334u)
+[VERCERL URL](https://adso3314566-lake.vercel.app/)
 
 
 ---
