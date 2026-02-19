@@ -37,3 +37,65 @@ document.addEventListener("mousemove", function (e) {
     star.remove();
   }, 1200);
 });
+
+const canvas = document.getElementById('canvasfondo');
+const ctx = canvas.getContext('2d');
+
+let particles = [];
+const particleCount = 500; 
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resize);
+resize();
+
+class Particle {
+    constructor() {
+        // Posicionamiento en una esfera 3D
+        this.theta = Math.random() * Math.PI * 2;
+        this.phi = Math.acos((Math.random() * 2) - 1);
+        this.dist = 280; // Radio del orbe
+        
+        // Colores según tu imagen (Rojos, Naranjas, Amarillos)
+        const hues = [10, 25, 40]; 
+        this.color = `hsla(${hues[Math.floor(Math.random() * hues.length)]}, 100%, 50%, ${Math.random() * 0.8 + 0.2})`;
+    }
+
+    draw() {
+        // Rotación continua
+        this.theta += 0.003;
+
+        // Proyectar 3D a 2D
+        const x3d = this.dist * Math.sin(this.phi) * Math.cos(this.theta);
+        const y3d = this.dist * Math.sin(this.phi) * Math.sin(this.theta);
+        const z3d = this.dist * Math.cos(this.phi);
+
+        const scale = 500 / (500 + z3d); 
+        const x2d = x3d * scale + canvas.width / 2;
+        const y2d = y3d * scale + canvas.height / 2;
+
+        ctx.beginPath();
+        ctx.arc(x2d, y2d, scale * 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    }
+}
+
+for (let i = 0; i < particleCount; i++) {
+    particles.push(new Particle());
+}
+
+function animate() {
+    // Fondo negro sólido con estela suave
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    particles.forEach(p => p.draw());
+    requestAnimationFrame(animate);
+}
+
+animate();
+
