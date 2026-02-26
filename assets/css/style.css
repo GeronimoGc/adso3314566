@@ -44,6 +44,23 @@
                 background: radial-gradient(circle, #ff00ff 0%, rgba(255, 0, 255, 0) 70%);
             }
 
+            /* Contenedor específico para el resultado del reto */
+            .challenge xmp {
+                display: block;
+                width: 95%;
+                max-width: 800px;
+                margin: 20px auto;
+                padding: 20px;
+                border: 2px solid var(--gris-carbon);
+                line-height: 1.5;
+                text-align: left;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+                background-color: rgba(0, 0, 0, 0.8);
+
+            }
+
+
             main {
 
                 text-align: center;
@@ -73,18 +90,39 @@
                         text-align: center;
                         min-width: 500px;
                         width: min-content;
+                        display: flex;
+                        flex-direction: column;
+
 
                         xmp {
-                            width: 300px;
+                            display: block;
+                            background-color: var(--color-negro-profundo);
+                            color: var(--blanco-humo);
+                            padding: 15px;
+                            border-radius: 20px;
+                            border: 1px solid var(--gris-plata);
+                            margin: 1rem auto;
+                            width: 90%;
+                            max-width: 450px;
+                            text-align: left;
+                            white-space: pre-wrap;
+                            overflow-x: auto;
+                            font-size: 0.9rem;
                         }
+
                     }
+
                 }
-
-
 
                 h1 {
                     font-size: 3.4rem;
                     margin: 0;
+                }
+
+                .img-challenge {
+                    border-radius: 20px;
+                    width: 600px;
+                    height: auto;
                 }
 
                 img {
@@ -96,6 +134,7 @@
                     width: 240px;
                     object-fit: cover;
                 }
+
 
 
 
