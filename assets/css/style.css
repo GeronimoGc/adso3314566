@@ -8,8 +8,6 @@
     --gris-plata: #A0A0A0;
 }
 
-
-
 body {
     /* background: linear-gradient(var(--color-negro-profundo), var(--color-principal)); */
     background-color: #4A004A;
@@ -21,7 +19,6 @@ body {
     align-items: center;
     min-height: 100dvh;
 
-    /* overflow: hidden; */
     a.btn-home {
         position: fixed;
         border: 2px solid var(--gris-carbon);
@@ -45,7 +42,6 @@ body {
         background: radial-gradient(circle, #ff00ff 0%, rgba(255, 0, 255, 0) 70%);
     }
 
-    /* Contenedor específico para el resultado del reto */
     .challenge xmp {
         display: block;
         width: 95%;
@@ -60,7 +56,6 @@ body {
         background-color: rgba(0, 0, 0, 0.8);
 
     }
-
 
     main {
 
@@ -93,7 +88,6 @@ body {
                 width: min-content;
                 display: flex;
                 flex-direction: column;
-
 
                 xmp {
                     display: block;
@@ -135,9 +129,6 @@ body {
             width: 240px;
             object-fit: cover;
         }
-
-
-
 
         h4 {
             text-align: center;
@@ -204,9 +195,6 @@ body {
     }
 }
 
-
-
-/* Stars Animation */
 .star {
     position: fixed;
     top: 0;
