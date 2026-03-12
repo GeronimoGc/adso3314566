@@ -168,6 +168,7 @@ body {
                     align-items: center;
                     height: 70px;
                     width: 70px;
+                    text-shadow: 4px 4px 5px var(--gris-carbon);
                 }
 
                 h4 {
@@ -196,10 +197,14 @@ body {
 
 .html {
     border: solid, 5px, #F54927 !important;
+    color: #F54927 !important;
 
     span {
-        background-color: #F54927;
+        background-color: #F54927 !important;
+        /* color: #F54927 !important; */
+        text-shadow: 4px 4px 5px var(--gris-carbon);
     }
+
 }
 
 .star {

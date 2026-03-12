@@ -1,0 +1,12 @@
+/* body {
+    main {
+        backdrop-filter: blur(0);
+        border: 0, solid, var(--gris-carbon);
+
+        header {
+            backdrop-filter: blur(5px) !important;
+            border: 2px, solid, var(--gris-carbon);
+            border-radius: 2rem;
+        }
+    }
+} */
