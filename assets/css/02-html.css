@@ -1,12 +1,91 @@
-/* body {
-    main {
-        backdrop-filter: blur(0);
-        border: 0, solid, var(--gris-carbon);
+/* Paleta de colores oficial de HTML5 */
+:root {
+    --color-html: #E34F26;        /* Naranja HTML oficial */
+    --color-html-light: #F06529;  /* Naranja claro */
+    --color-html-bg: #EBEBEB;     /* Gris muy claro para fondos */
+    --color-negro-html: #212121;  /* Gris oscuro/negro para contraste */
+    --blanco: #FFFFFF;
+}
 
-        header {
-            backdrop-filter: blur(5px) !important;
-            border: 2px, solid, var(--gris-carbon);
-            border-radius: 2rem;
-        }
-    }
-} */
+body {
+    /* Fondo con un patrón geométrico sutil en tonos naranja/gris */
+    background-color: var(--color-html-bg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23e34f26' fill-opacity='0.05'%3E%3Cpath fill-rule='evenodd' d='M11 18H2V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zM9 20H0V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12z'/%3E%3C/g%3E%3C/svg%3E");
+    color: var(--color-negro-html);
+}
+
+/* Efecto de partículas/estrellas ahora en naranja */
+.star {
+    background: radial-gradient(circle, var(--color-html-light) 0%, rgba(227, 79, 38, 0) 70%);
+    box-shadow: 0 0 15px rgba(227, 79, 38, 0.8);
+}
+
+main {
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+    border: 3px solid var(--color-html);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    color: var(--color-html);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+header h4 {
+    color: var(--color-html-light);
+    font-weight: bold;
+}
+
+/* Ajuste de la imagen del logo */
+main img {
+    border: 6px solid var(--color-html);
+    background-color: white;
+}
+
+/* Estilos del Menú */
+menu {
+    gap: 0.8rem;
+}
+
+menu a:link,
+menu a:visited {
+    background-color: var(--color-negro-html);
+    border: 2px solid var(--color-html);
+    transition: all 0.3s ease;
+}
+
+menu a span {
+    background-color: var(--color-html) !important;
+    color: var(--blanco);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+menu a h4 {
+    color: var(--blanco);
+}
+
+/* Hover: El botón se vuelve naranja y el texto oscuro */
+menu a:hover {
+    background-color: var(--color-html);
+    transform: scale(1.05) translateX(15px);
+}
+
+menu a:hover h4 {
+    color: var(--blanco);
+}
+
+menu a:hover span {
+    background-color: var(--color-negro-html) !important;
+}
+
+/* Botón Home */
+a.btn-home {
+    background-color: var(--color-html);
+    border: 2px solid var(--color-negro-html);
+}
+
+a.btn-home svg {
+    fill: var(--blanco);
+}
