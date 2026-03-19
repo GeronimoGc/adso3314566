@@ -1,91 +1,134 @@
-/* Paleta de colores oficial de HTML5 */
 :root {
-    --color-html: #E34F26;        /* Naranja HTML oficial */
-    --color-html-light: #F06529;  /* Naranja claro */
-    --color-html-bg: #EBEBEB;     /* Gris muy claro para fondos */
-    --color-negro-html: #212121;  /* Gris oscuro/negro para contraste */
-    --blanco: #FFFFFF;
+    /* Paleta Oficial HTML5 */
+    --html5-orange: #E34F26;
+    --html5-orange-light: #F06529;
+    --html5-white: #FFFFFF;
+    --html5-silver: #EBEBEB;
+
+    /* Colores de Interfaz */
+    --html5-dark: #212121;
+    --html5-text: #333333;
+    --html5-bg: #F4F4F4;
 }
 
 body {
-    /* Fondo con un patrón geométrico sutil en tonos naranja/gris */
-    background-color: var(--color-html-bg);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23e34f26' fill-opacity='0.05'%3E%3Cpath fill-rule='evenodd' d='M11 18H2V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zm10 0h-9V6h9v12zM9 20H0V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12zm10 0h-9V8h9v12z'/%3E%3C/g%3E%3C/svg%3E");
-    color: var(--color-negro-html);
+
+    background-color: #F06529;
+    opacity: 1;
+    background-image: linear-gradient(30deg, #EBEBEB 12%, transparent 12.5%, transparent 87%, #EBEBEB 87.5%, #EBEBEB), linear-gradient(150deg, #EBEBEB 12%, transparent 12.5%, transparent 87%, #EBEBEB 87.5%, #EBEBEB), linear-gradient(30deg, #EBEBEB 12%, transparent 12.5%, transparent 87%, #EBEBEB 87.5%, #EBEBEB), linear-gradient(150deg, #EBEBEB 12%, transparent 12.5%, transparent 87%, #EBEBEB 87.5%, #EBEBEB), linear-gradient(60deg, #EBEBEB77 25%, transparent 25.5%, transparent 75%, #EBEBEB77 75%, #EBEBEB77), linear-gradient(60deg, #EBEBEB77 25%, transparent 25.5%, transparent 75%, #EBEBEB77 75%, #EBEBEB77);
+    background-size: 32px 56px;
+    background-position: 0 0, 0 0, 16px 28px, 16px 28px, 0 0, 16px 28px;
+    color: var(--html5-dark);
 }
 
-/* Efecto de partículas/estrellas ahora en naranja */
+/* Partículas en el naranja claro de HTML5 */
 .star {
-    background: radial-gradient(circle, var(--color-html-light) 0%, rgba(227, 79, 38, 0) 70%);
-    box-shadow: 0 0 15px rgba(227, 79, 38, 0.8);
+    background: radial-gradient(circle, var(--html5-orange-light) 0%, rgba(240, 101, 41, 0) 70%);
+    box-shadow: 0 0 15px rgba(240, 101, 41, 0.8);
 }
 
 main {
-    background: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
-    border: 3px solid var(--color-html);
+    background: rgba(255, 255, 255, 0.95);
+    border: 3px solid var(--html5-orange) !important;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
+    width: min-content;
 }
 
-h1 {
-    color: var(--color-html);
+h1,
+h2,
+h3,
+h4 {
+    color: var(--html5-text);
     text-transform: uppercase;
-    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
 }
 
 header h4 {
-    color: var(--color-html-light);
+    color: var(--html5-text);
     font-weight: bold;
 }
 
-/* Ajuste de la imagen del logo */
+/* Imagen de perfil con borde naranja */
 main img {
-    border: 6px solid var(--color-html);
-    background-color: white;
+    border: 6px solid var(--html5-orange) !important;
+    background-color: var(--html5-white);
 }
 
 /* Estilos del Menú */
-menu {
-    gap: 0.8rem;
-}
-
 menu a:link,
 menu a:visited {
-    background-color: var(--color-negro-html);
-    border: 2px solid var(--color-html);
-    transition: all 0.3s ease;
+    background-color: var(--html5-orange);
+    border: 2px solid var(--html5-orange);
 }
 
+/* El círculo con la letra/icono */
 menu a span {
-    background-color: var(--color-html) !important;
-    color: var(--blanco);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background-color: var(--html5-orange) !important;
+    color: var(--html5-white);
 }
 
 menu a h4 {
-    color: var(--blanco);
+    color: var(--html5-white);
 }
 
-/* Hover: El botón se vuelve naranja y el texto oscuro */
+/* Hover: Inversión de colores */
 menu a:hover {
-    background-color: var(--color-html);
-    transform: scale(1.05) translateX(15px);
-}
-
-menu a:hover h4 {
-    color: var(--blanco);
+    background-color: var(--html5-orange);
+    border-color: var(--html5-dark);
 }
 
 menu a:hover span {
-    background-color: var(--color-negro-html) !important;
+    background-color: var(--html5-orange) !important;
+    color: var(--html5-orange);
 }
 
-/* Botón Home */
+/* Botón flotante Home */
 a.btn-home {
-    background-color: var(--color-html);
-    border: 2px solid var(--color-negro-html);
+    background-color: var(--html5-orange) !important;
+    border: 2px solid var(--html5-dark);
 }
 
 a.btn-home svg {
-    fill: var(--blanco);
+    fill: var(--html5-white);
 }
+
+#orbCanvas {
+    color: var(--html5-orange-light);
+}
+
+body main {
+    width: 40%;
+}
+
+body main section div {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    border: solid 2px var(--html5-orange-light);
+    border-radius: 25px;
+    margin: 1.5rem;
+}
+
+body main section div {
+    width: max-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+body main section p {
+    text-align: center;
+}
+
+body main section div:nth-child(3),body main section div:nth-child(4) {
+    width: 100%;
+}
+
+main section a:is(:link, :visited){
+    color: hotpink;
+}
+
+p {width: 30rem;}
