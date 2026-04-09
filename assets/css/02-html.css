@@ -117,18 +117,80 @@ body main section div {
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: -8px 6px 25px 5px rgba(0, 0, 0, 0.6);
 }
 
 body main section p {
     text-align: center;
 }
 
-body main section div:nth-child(3),body main section div:nth-child(4) {
+body main section div:nth-child(3),
+body main section div:nth-child(4) {
     width: 100%;
 }
 
-main section a:is(:link, :visited){
+main section a:is(:link, :visited) {
     color: hotpink;
 }
 
-p {width: 30rem;}
+p {
+    width: 30rem;
+}
+
+body main section form fieldset {
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+body main section form fieldset input,
+body main section form fieldset select,
+body main section form fieldset textarea,
+body main section form fieldset select option,
+body main section form button {
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.452);
+    border: 0px;
+}
+
+body main section form button{
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.5s;
+}
+body main section form button:hover {
+    transform: scale(1.15);
+}
+
+select {
+    border: 2px solid #dddddd;
+    background-color: rgba(255, 255, 255, 0.452);
+    padding: 10px;
+    transition: 0.4s;
+}
+
+select:hover,
+select:focus {
+    background-color: rgba(255, 255, 255, 0.122);
+}
+
+select option {
+    background-color: rgba(255, 255, 255, 0.122);
+    color: var(--html5-dark);
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+select option:checked {
+    background-color: #ffcc00;
+    font-weight: bold;
+}
+
+body main div table tr td {
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    border-radius: 25px;
+}
+table {
+    border-radius: 15px;
+    border: rgba(0, 0, 0, 0.6) solid 1px;
+}

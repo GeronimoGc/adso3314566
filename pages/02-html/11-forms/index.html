@@ -25,40 +25,143 @@
             <h2>Formularioss</h2>
         </header>
         <section>
-            <form action="" method="" enctype="" accept="" novalidate autocomplete="">
-                <fieldset>
-                    <legend>Usuario</legend>
-                    <label for="name">nombre</label>
-                    <input type="text" id="name">
-                </fieldset>
-                <fieldset>
-                    <legend>Contraseña</legend>
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password">
-                </fieldset>
-                <fieldset>
-                    <legend>genero</legend>
-                    <label for="rh">nombre</label>
-                    <select name="sangre" id="rh">
-                        <option value="" selected>seleccione</option>
-                        <option value="o+">O+</option>
-                        <option value="o-">O-</option>
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB">AB-</option>
-                    </select>
-                </fieldset>
-                <fieldset>
-                    <legend>descripcion</legend>
-                    <label for="descr">descripcion mia</label>
-                    <textarea name="descripcion" id="descr"></textarea>
-                </fieldset>
-            </form>
+            <div>
+                <form id="fakeForm" action="" method="" enctype="" accept="" novalidate autocomplete="">
+                    <fieldset>
+                        <legend>Usuario</legend>
+                        <label for="name">nombre</label>
+                        <input type="text" id="name" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Contraseña</legend>
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password">
+                    </fieldset>
+                    <fieldset>
+                        <legend>genero</legend>
+                        <label for="rh">nombre</label>
+                        <select name="sangre" id="rh">
+                            <option value="" selected>seleccione</option>
+                            <option value="o+">❤️O+</option>
+                            <option value="o-">❤️O-</option>
+                            <option value="A+">❤️A+</option>
+                            <option value="A-">❤️A-</option>
+                            <option value="AB+">❤️AB+</option>
+                            <option value="AB">❤️AB-</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <legend>descripcion</legend>
+                        <label for="descr">descripcion mia</label>
+                        <textarea name="descripcion" id="descr"></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <legend>volumen</legend>
+                        <label for="volumen"></label>
+                        <input type="range" id="volumen" min="-255" max="255">
+                    </fieldset>
+                    <fieldset>
+                        <legend>hidden</legend>
+                        <label for="hidden">hidden</label>
+                        <input type="hidden" id="hidden">
+                    </fieldset>
+                    <fieldset>
+                        <legend>fecha</legend>
+                        <label for="fecha">fecha</label>
+                        <input type="date" id="fecha">
+                    </fieldset>
+                    <fieldset>
+                        <legend>fecha y hora</legend>
+                        <label for="datetime">fecha y hora</label>
+                        <input type="datetime" id="datetime">
+                    </fieldset>
+                    <fieldset>
+                        <legend>fecha y hora</legend>
+                        <label for="datetime">fecha y hora</label>
+                        <input type="datetime" id="datetime">
+                    </fieldset>
+                    <fieldset>
+                        <legend>mes</legend>
+                        <label for="mes">mes</label>
+                        <input type="month" id="mes">
+                    </fieldset>
+                    <fieldset>
+                        <legend>hora</legend>
+                        <label for="hora">hora</label>
+                        <input type="time" id="hora">
+                    </fieldset>
+                    <fieldset>
+                        <legend>semana</legend>
+                        <label for="semana">semana</label>
+                        <input type="week" id="semana">
+                    </fieldset>
+                    <fieldset>
+                        <legend>color</legend>
+                        <label for="color">color</label>
+                        <input type="color" id="color">
+                    </fieldset>
+                    <fieldset>
+                        <legend>correo de pepe</legend>
+                        <label for="correodepepe">correo de pepe</label>
+                        <input type="email" id="correodepepe">
+                    </fieldset>
+                    <fieldset>
+                        <legend>telefono de pepe</legend>
+                        <label for="telefonodepepe">telefono de pepe</label>
+                        <input type="tel" id="telefonodepepe">
+                    </fieldset>
+                    <fieldset>
+                        <legend>buscar a pepe</legend>
+                        <label for="buscarapepe"></label>
+                        <input type="search" id="buscarapepe">
+                    </fieldset>
+                    <fieldset>
+                        <legend>rango</legend>
+                        <label for="rango">rango de pepe</label>
+                        <input type="range" id="rango">
+                    </fieldset>
+                    <fieldset>
+                        <legend>numero de pepe</legend>
+                        <label for="numberpepe">numero de pepe</label>
+                        <input type="number" id="numberpepe">
+                    </fieldset>
+                    <fieldset>
+                        <legend>pagina de pepe</legend>
+                        <label for="paginapepe">pagina de pepe</label>
+                        <input type="url" id="paginapepe">
+                    </fieldset>
+                    <fieldset>
+                        <legend>elige meme en pdf</legend>
+                        <label for="memes">sube un buen meme en pdf</label>
+                        <input type="file" id="memes">
+                    </fieldset>
+                    <fieldset>
+                        <label for="memes2">sube un buen meme en imagen</label>
+                        <input type="image" id="memes2">
+                    </fieldset>
+                    <fieldset>
+                        <legend></legend>
+                        <label for="coockies">aceptas mis cookies</label>
+                        <input type="checkbox" id="coockies" required>
+                    </fieldset>
+                    <button type="submit">Submit</button>
+                    <button type="reset">reset</button>
+                </form>
+            </div>
         </section>
     </main>
 
     <script src="../../../assets/js/stars.js"></script>
+    <script>
+        document.getElementById('fakeForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            alert("¡Felicidades! Estás siendo redirigido a tu premio...");
+
+
+            window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        });
+    </script>
 </body>
 
 </html>
