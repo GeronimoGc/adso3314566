@@ -207,6 +207,30 @@ body {
 
 }
 
+
+.css {
+    border: solid, 5px, #ff1aab !important;
+    color: #ff1aab !important;
+
+    span {
+        background-color: #ff1aab !important;
+        /* color: #F54927 !important; */
+        text-shadow: 4px 4px 5px var(--gris-carbon);
+    }
+
+}
+
+.emmet {
+    border: solid, 5px, #3cff00 !important;
+    color: #3cff00 !important;
+
+    span {
+        background-color: #3cff00 !important;
+        /* color: #F54927 !important; */
+        text-shadow: 4px 4px 5px var(--gris-carbon);
+    }
+
+}
 .star {
     position: fixed;
     top: 0;
