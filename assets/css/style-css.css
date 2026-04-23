@@ -1,0 +1,94 @@
+body main menu div a {
+    margin: 1rem;
+}
+
+body main {
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+
+body main header {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    width: 80%;
+}
+body main menu {
+    display: flex;
+    flex-direction: row !important;
+    width: fit-content;
+}
+
+body main menu div span {
+    border-bottom: 2px solid, white;
+    display: block;
+}
+
+@media screen and (max-width: 580px) {
+    body main menu {
+        display: flex;
+        flex-direction: column !important;
+    }
+}
+
+div.adso {
+    background: linear-gradient(#663398 50%, #a478d1 50%);
+    border-radius: 0.4rem;
+    color: #fff;
+    padding: 1rem;
+    margin: 4rem auto;
+    font-size: 3.6rem;
+}
+
+.opacity {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    padding: 1rem !important;
+    border-radius: 15px !important;
+}
+
+body main section div.rotate {
+    background-color: #000;
+    color: #fff9;
+    margin: 4rem auto;
+    padding: 0.4rem;
+    text-align: center;
+    font-size: 4rem;
+    width: 200px;
+    transform: rotate(-25deg);
+
+}
+
+ul.fruits {
+    border: solid 1px black;
+    width: 15rem;
+    border-radius: 25px;
+}
+
+ul.fruits > li + li {
+    background: rgba(235, 0, 0, 1);
+}
+
+ul.fruits > li + li + li {
+    background: rgb(43, 255, 1);
+}
+
+ul.fruits > li  {
+    background: rgb(255, 107, 1);
+}
+
+section button {
+    border-radius: 0.4rem;
+    border: none;
+    padding: 0.8rem 0.8rem;
+    font-size: 1.4rem;
+    display: flex;
+    margin: 4rem auto;
+}
+
+section button.green {
+    background: #5fbb5f;
+}
+section .green {
+    background: #e44ea8;
+}
