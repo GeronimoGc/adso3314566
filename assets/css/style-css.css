@@ -180,7 +180,107 @@ section.percentage {
         div.child2 {
             display: flex;
             align-items: center;
-            height: 30% ;
+            height: 30%;
         }
     }
 }
+
+div.colors {
+    border-radius: 25px;
+    color: #000;
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0 solid;
+        border-radius: 0;
+        padding: 0.5rem;
+
+        div {
+            border-radius: 15px;
+            margin: 0.1rem;
+
+            transition: all 0.4s ease-out;
+            &:hover {
+                cursor: none;
+                transform: scale(1.4);
+            }
+            &:first-child, &:last-child {
+                color: white;
+            }
+
+            &.marron {
+                background: #800000;
+            }
+
+            &.red {
+                background: #ff0000;
+            }
+
+            &.orange {
+                background: hsl(39, 100%, 50%);
+            }
+
+            &.yellow {
+                background: #ffff00;
+            }
+
+            &.olive {
+                background-color: #808000;
+            }
+
+            &.purple {
+                background-color: #800080;
+            }
+
+            &.fuchsia {
+                background-color: #ff00ff;
+            }
+
+            &.white {
+                background-color: #ffffff;
+            }
+
+            &.lime {
+                background-color: #00ff00;
+            }
+
+            &.green {
+                background-color: #008000;
+            }
+
+            &.navy {
+                background-color: #000080;
+            }
+
+            &.blue {
+                background-color: #0000ff;
+            }
+
+            &.aqua {
+                background-color: #00ffff;
+            }
+
+            &.teal {
+                background-color: #008080;
+            }
+
+            &.black {
+                background-color: #000000;
+            }
+
+            &.silver {
+                background-color: #c0c0c0;
+            }
+
+            &.gray {
+                background-color: #808080;
+            }
+        }
+    }
+}
+/* 
+* {
+    background: rgba(255, 0, 255, 1);
+} */
