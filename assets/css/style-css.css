@@ -33,7 +33,7 @@ body main menu div span {
     }
 }
 
-div {
+body main section div {
     border: #000 solid 1px;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 25px;
@@ -110,25 +110,48 @@ body main section.inheritch {
     }
 }
 
-.units_relativ li {
+ul.units_relativ li {
     margin: 1rem;
     background: rgba(158, 1, 255, 0.3);
     border: #000 1px solid;
     font-size: 2rem;
 }
 
-.rel1 {
+li.rel1 {
     width: 15px;
 }
 
-.rel2 {
+li.rel2 {
     width: 1.5em;
 }
 
-.rel3 {
+li.rel3 {
     width: 2rem;
 }
 
-.rel4 {
+li.rel4 {
     width: 1.2ex;
+}
+
+ul.abs li{
+    margin: 1rem;
+    background: rgba(158, 1, 255, 0.3);
+    border: #000 1px solid;
+    font-size: 2rem;
+}
+
+li.abs1 {
+    width: 0.5in;
+}
+
+li.abs2 {
+    width: 1cm;
+}
+
+li.abs3 {
+    width: 10mm;
+}
+
+li.abs4 {
+    width: 2pc;
 }
