@@ -92,3 +92,10 @@ section button.green {
 section .green {
     background: #e44ea8;
 }
+
+body main section {
+    color: darksalmon;
+    li.important {
+        color: palegreen;
+    }
+}
