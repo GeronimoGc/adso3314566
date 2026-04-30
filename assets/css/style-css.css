@@ -133,7 +133,7 @@ li.rel4 {
     width: 1.2ex;
 }
 
-ul.abs li{
+ul.abs li {
     margin: 1rem;
     background: rgba(158, 1, 255, 0.3);
     border: #000 1px solid;
@@ -154,4 +154,33 @@ li.abs3 {
 
 li.abs4 {
     width: 2pc;
+}
+
+section.percentage {
+    width: 80%;
+    background-color: rgba(158, 1, 255, 0.3);
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    border: 1px solid black;
+
+    div.parent {
+        height: 50dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div.child1 {
+            display: flex;
+            align-items: center;
+            height: 70%;
+        }
+
+        div.child2 {
+            display: flex;
+            align-items: center;
+            height: 30% ;
+        }
+    }
 }
