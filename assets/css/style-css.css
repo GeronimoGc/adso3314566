@@ -93,7 +93,7 @@ section .green {
     background: #e44ea8;
 }
 
-body main section {
+body main section.inheritch {
     color: darksalmon;
     li.important {
         color: palegreen;
