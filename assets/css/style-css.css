@@ -14,6 +14,7 @@ body main header {
     margin-bottom: 1rem;
     width: 80%;
 }
+
 body main menu {
     display: flex;
     flex-direction: row !important;
@@ -30,6 +31,13 @@ body main menu div span {
         display: flex;
         flex-direction: column !important;
     }
+}
+
+div {
+    border: #000 solid 1px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    padding: 1rem;
 }
 
 div.adso {
@@ -65,15 +73,15 @@ ul.fruits {
     border-radius: 25px;
 }
 
-ul.fruits > li + li {
+ul.fruits>li+li {
     background: rgba(235, 0, 0, 1);
 }
 
-ul.fruits > li + li + li {
+ul.fruits>li+li+li {
     background: rgb(43, 255, 1);
 }
 
-ul.fruits > li  {
+ul.fruits>li {
     background: rgb(255, 107, 1);
 }
 
@@ -89,13 +97,38 @@ section button {
 section button.green {
     background: #5fbb5f;
 }
+
 section .green {
     background: #e44ea8;
 }
 
 body main section.inheritch {
     color: darksalmon;
+
     li.important {
         color: palegreen;
     }
+}
+
+.units_relativ li {
+    margin: 1rem;
+    background: rgba(158, 1, 255, 0.3);
+    border: #000 1px solid;
+    font-size: 2rem;
+}
+
+.rel1 {
+    width: 15px;
+}
+
+.rel2 {
+    width: 1.5em;
+}
+
+.rel3 {
+    width: 2rem;
+}
+
+.rel4 {
+    width: 1.2ex;
 }
