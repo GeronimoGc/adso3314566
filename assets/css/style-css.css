@@ -1,3 +1,24 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+main {
+    margin: auto 0;
+    width: fit-content;
+    max-width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
 body main menu div a {
     margin: 1rem;
 }
@@ -332,6 +353,7 @@ body main section div div.box-model {
 
     div {
         background-color: rgba(128, 0, 0, 0.6);
+
         div {
             background-color: rgba(20, 31, 187, 0.6);
 
@@ -344,4 +366,174 @@ body main section div div.box-model {
             }
         }
     }
+}
+
+body main section div.background div {
+    div.background-color {
+        background-color: rgba(158, 1, 255, 0.3);
+        width: 125px;
+        height: 125px;
+    }
+
+    div.background-image {
+        background-image: url(../../assets/img/megumin2.jpg);
+        background-size: cover;
+        width: 125px;
+        height: 125px;
+    }
+
+    div.background-repeat {
+        background-repeat: repeat;
+        background-image: url(../../assets/img/megumin2.jpg);
+        background-size: 50px;
+        width: 125px;
+        height: 125px;
+    }
+
+    div.background-position {
+        background-position: 80%, 40%;
+        background-repeat: no-repeat;
+        background-image: url(../../assets/img/megumin2.jpg);
+        background-size: 50px;
+        width: 125px;
+        height: 125px;
+    }
+
+    div.background-size {
+        background-image: url(../../assets/img/megumin2.jpg);
+        background-repeat: no-repeat;
+        background-size: 1rem;
+        width: 125px;
+        height: 125px;
+    }
+}
+
+
+
+body main section.position {
+    div {
+        height: 200px;
+        width: 200px;
+
+
+        div {
+            height: min-content;
+            width: min-content;
+        }
+    }
+
+    div.static {
+        position: static;
+        left: 100px;
+        top: 100px;
+    }
+
+    div.relative {
+        position: relative;
+        left: 100px;
+        top: 100px;
+    }
+
+    div.absolute {
+        position: absolute;
+        inset-block-start: 600px;
+        inset-inline-start: -150px;
+    }
+
+    div.sticky div {
+        width: 100%;
+        height: 100px;
+        border: 0px;
+        margin: 0;
+        background: none;
+        display: flex;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    div.sticky div span {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 1rem;
+        border-radius: 25%;
+        border: 1px solid black;
+    }
+
+    div.fixed2 {
+        div.fixed {
+            position: fixed;
+            top: 80px;
+            left: 30px;
+        }
+    }
+
+}
+
+body main section div.float {
+    float: left;
+
+    img {
+        float: left;
+        height: 100px;
+        width: 100px;
+        margin: 5px;
+    }
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 100px);
+    gap: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.grid-item {
+    background-color: #3498db;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 2px solid #2980b9;
+    transition: background 0.3s ease;
+}
+
+.grid-item:hover {
+    background-color: #2ecc71;
+    cursor: pointer;
+}
+
+.display-none {
+    display: none;
+}
+
+.display-hidden {
+    display: hidden;
+}
+.display-inline {
+    display: inline;
+}
+
+.display-block {
+    display: block;
+}
+
+.overflow-visible {
+    overflow: visible;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.overflow-scroll {
+    overflow: scroll;
 }
