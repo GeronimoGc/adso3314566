@@ -203,11 +203,14 @@ div.colors {
             margin: 0.1rem;
 
             transition: all 0.4s ease-out;
+
             &:hover {
                 cursor: none;
                 transform: scale(1.4);
             }
-            &:first-child, &:last-child {
+
+            &:first-child,
+            &:last-child {
                 color: white;
             }
 
@@ -285,28 +288,58 @@ div.colors {
 
 body main section {
     div {
-        all: revert;
         h3 {
             border-bottom: 1px dotted white;
             text-align: start;
         }
+
         figure.megumin {
-            background: url(../../assets/img/megumin.png)
-            no-repeat center /cover;
+            background: url(../../assets/img/megumin.png) no-repeat center /cover;
             border: 4px;
             margin-block: 4rem;
             height: 380px;
             width: 380px;
+
             div {
+                padding: 0px;
+                margin: 0px;
+                border: 0;
+                border-radius: 0;
                 height: calc(360px/3);
+
                 &.box1 {
+                    border: 0px;
                     background-color: rgba(0, 0, 0, 0.9);
                 }
+
                 &.box2 {
                     background-color: #00000099;
                 }
+
                 &.box3 {
                     background-color: hsla(0, 0%, 0%, 0.3);
+                }
+            }
+        }
+    }
+}
+
+
+body main section div div.box-model {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+
+    div {
+        background-color: rgba(128, 0, 0, 0.6);
+        div {
+            background-color: rgba(20, 31, 187, 0.6);
+
+            div {
+                background-color: rgba(76, 18, 76, 0.6);
+
+                div {
+                    background-color: rgba(18, 76, 20, 0.6);
                 }
             }
         }
