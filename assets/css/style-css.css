@@ -608,3 +608,19 @@ p.lang:lang {
   text-transform: uppercase;
   color: red;
 }
+
+ul.lits-style-type {
+    list-style-type: square;
+}
+
+ul.list-style-position {
+    list-style-position: inherit;
+}
+
+ul.list-style-image {
+    list-style-image: url(../../assets/img/megumin.png);
+}
+
+ul.list-style {
+    list-style: square url(../../assets/img/megumin.png) inherit;
+}
