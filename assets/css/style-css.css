@@ -537,3 +537,31 @@ body main section div.float {
 .overflow-scroll {
     overflow: scroll;
 }
+
+p.text-align {
+    text-align: right;
+}
+
+p.line-height {
+    line-height: 1%;
+}
+
+p.text-decoration {
+    text-decoration: underline;
+}
+
+p.text-transform {
+    text-transform: uppercase;
+}
+
+p.vertical-align {
+    vertical-align: top;
+}
+
+p.text-indent {
+    text-indent: 4rem;
+}
+
+p.word-spacing {
+    word-spacing: 1rem;
+}
