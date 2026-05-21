@@ -624,3 +624,7 @@ ul.list-style-image {
 ul.list-style {
     list-style: square url(../../assets/img/megumin.png) inherit;
 }
+
+div.cursor {
+    cursor: crosshair;
+}
