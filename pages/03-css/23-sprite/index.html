@@ -1,40 +1,139 @@
 <DOCTYPE html>
-<html lang="es">
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Sprite</title>
+      <link rel="stylesheet" href="../../../assets/css/style.css" />
+      <link rel="stylesheet" href="../../../assets/css/style-css.css" />
+      <link
+        rel="shortcut icon"
+        href="../../../assets/img/logo-html.png"
+        type="image/x-icon"
+      />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sprite</title>
-    <link rel="stylesheet" href="../../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../../assets/css/style-css.css" />
-    <link rel="shortcut icon" href="../../../assets/img/logo-html.png" type="image/x-icon">
-</head>
+      <style>
+        div#sprite {
+          background: url(../../../assets/img/anim-sprite.png);
+          height: 256px;
+          margin: 1rem auto;
+          width: 256px;
+        }
+        div#sprite.sp1 {
+          background-position: calc(-256px * 0) 0;
+        }
+        div#sprite.sp2 {
+          background-position: calc(-256px * 1) 0;
+        }
+        div#sprite.sp3 {
+          background-position: calc(-256px * 2) 0;
+        }
+        div#sprite.sp4 {
+          background-position: calc(-256px * 3) 0;
+        }
+        div#sprite.sp5 {
+          background-position: calc(-256px * 4) 0;
+        }
+        div#sprite.sp6 {
+          background-position: calc(-256px * 5) 0;
+        }
 
-<body>
+        div#transform {
+          background: url(../../../assets/img/naruto-sprite.jpg);
+          background-size: 200rem;
 
-    <div id="orb-container"
-        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;">
+          height: 200px;
+          width: 200px;
+          margin: 1rem auto;
+          background-repeat: no-repeat;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Coordenadas exactas para la primera fila */
+        div#transform.tr1 {
+          background-position: -20px 0px;
+        }
+        div#transform.tr2 {
+          background-position: -245px 0px;
+        }
+        div#transform.tr3 {
+          background-position: -490px 0px;
+        }
+        div#transform.tr4 {
+          background-position: -715px 0px;
+        }
+        div#transform.tr5 {
+          background-position: -940px 0px;
+        }
+      </style>
+    </head>
+
+    <body>
+      <div
+        id="orb-container"
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          pointer-events: none;
+        "
+      >
         <canvas id="orbCanvas"></canvas>
-        <canvas id="" style="position: absolute; top: 0; left: 0;"></canvas>
-    </div>
-    <a class="btn-home" href="../">
-        <svg xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 640 640">
-            <path
-                d="M41.4 342.6C28.9 330.1 28.9 309.8 41.4 297.3L169.4 169.3C178.6 160.1 192.3 157.4 204.3 162.4C216.3 167.4 224 179.1 224 192L224 256L560 256C586.5 256 608 277.5 608 304L608 336C608 362.5 586.5 384 560 384L224 384L224 448C224 460.9 216.2 472.6 204.2 477.6C192.2 482.6 178.5 479.8 169.3 470.7L41.3 342.7z" />
-    </svg>
-    </a>
+        <canvas id="" style="position: absolute; top: 0; left: 0"></canvas>
+      </div>
+      <a class="btn-home" href="../">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+          <path
+            d="M41.4 342.6C28.9 330.1 28.9 309.8 41.4 297.3L169.4 169.3C178.6 160.1 192.3 157.4 204.3 162.4C216.3 167.4 224 179.1 224 192L224 256L560 256C586.5 256 608 277.5 608 304L608 336C608 362.5 586.5 384 560 384L224 384L224 448C224 460.9 216.2 472.6 204.2 477.6C192.2 482.6 178.5 479.8 169.3 470.7L41.3 342.7z"
+          />
+        </svg>
+      </a>
 
-    <main>
+      <main>
         <header>
-            <h1>Sprite</h1>
-            <h2>Collection of images put into a single image.</h2>
+          <h1>Sprite</h1>
+          <h2>Collection of images put into a single image.</h2>
         </header>
-        <section></section>
-    </main>
+        <section>
+          <div>
+            <h3>Runner</h3>
+            <div id="sprite" class="sp1"></div>
+          </div>
 
-    <script src="../../../assets/js/stars.js"></script>
-    <script src="../../../assets/js/orbs.js"></script>
-</body>
+          <div>
+            <h3>Transformation</h3>
+            <div id="transform" class="tr1"></div>
+          </div>
+        </section>
+      </main>
 
-</html>
+      <script src="../../../assets/js/stars.js"></script>
+      <script src="../../../assets/js/orbs.js"></script>
+
+      <script>
+        // Runner (6 frames)
+        const runnerElement = document.getElementById("sprite");
+        const runnerFrames = 6;
+        let runnerCount = 1;
+
+        setInterval(() => {
+          runnerElement.className = "sp" + runnerCount;
+          runnerCount = (runnerCount % runnerFrames) + 1;
+        }, 80);
+
+        // Transformación (5 frames)
+        const transformElement = document.getElementById("transform");
+        const transformFrames = 5;
+        let transformCount = 1;
+
+        setInterval(() => {
+          transformElement.className = "tr" + transformCount;
+          transformCount = (transformCount % transformFrames) + 1;
+        }, 200);
+      </script>
+    </body>
+  </html>
+</DOCTYPE>

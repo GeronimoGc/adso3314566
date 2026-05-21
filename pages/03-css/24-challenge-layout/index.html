@@ -1,40 +1,101 @@
-<DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge Layout</title>
-    <link rel="stylesheet" href="../../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../../assets/css/style-css.css" />
-    <link rel="shortcut icon" href="../../../assets/img/logo-html.png" type="image/x-icon">
-</head>
-
-<body>
-
-    <div id="orb-container"
-        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;">
-        <canvas id="orbCanvas"></canvas>
-        <canvas id="" style="position: absolute; top: 0; left: 0;"></canvas>
-    </div>
-    <a class="btn-home" href="../">
-        <svg xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 640 640">
-            <path
-                d="M41.4 342.6C28.9 330.1 28.9 309.8 41.4 297.3L169.4 169.3C178.6 160.1 192.3 157.4 204.3 162.4C216.3 167.4 224 179.1 224 192L224 256L560 256C586.5 256 608 277.5 608 304L608 336C608 362.5 586.5 384 560 384L224 384L224 448C224 460.9 216.2 472.6 204.2 477.6C192.2 482.6 178.5 479.8 169.3 470.7L41.3 342.7z" />
-    </svg>
-    </a>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One Punch Man</title>
+    <style>
+      html {
+        background-color: rgb(23, 160, 83);
+        body {
+          display: flex;
+          justify-content: center;
+          main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            header {
+              display: flex;
+              justify-content: center;
+              div.header {
+                background-image: url(../../../assets/img/spriteweb.png);
+                background-size: 850px;
+                background-position: -12px -425px;
+                background-repeat: no-repeat;
+                width: 200px;
+                height: 200px;
+              }
+            }
+            nav {
+              ul {
+                display: flex;
+                li:hover {
+                  background-color: rgba(0, 0, 0, 0.8);
+                  border-bottom: yellow 5px solid;
+                  transition: 0.5s;
+                }
+                li {
+                  list-style-type: none;
+                  margin: 1rem;
+                  background-color: rgba(0, 0, 0, 0.4);
+                  padding-left: 2.5%;
+                  padding-right: 2.5%;
+                  padding-top: 1%;
+                  padding-bottom: 1%;
+                  border-bottom: white 5px solid;
+                  a {
+                    text-transform: uppercase;
+                    color: white;
+                    text-decoration: none;
+                  }
+                }
+              }
+            }
+            section {
+              background-color: rgba(0, 0, 0, 0.4);
+              display: flex;
+              justify-content: center;
+              width: fit-content;
+              div {
+                margin: 0.5rem;
+                width: 200px;
+                height: 200px;
+                border: 1px white solid;
+              }
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
     <main>
-        <header>
-            <h1>Challenge Layout</h1>
-            <h2>Layout exercise solved.</h2>
-        </header>
-        <section></section>
+      <header>
+        <div class="header"></div>
+      </header>
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Portafolio</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <section>
+        <div>
+          <span>Spritt 01</span>
+        </div>
+        <div>
+          <span>Spritt 02</span>
+        </div>
+        <div>
+          <span>Spritt 03</span>
+        </div>
+      </section>
     </main>
-
-    <script src="../../../assets/js/stars.js"></script>
-    <script src="../../../assets/js/orbs.js"></script>
-</body>
-
+  </body>
 </html>
