@@ -30,6 +30,7 @@
             }
             nav {
               ul {
+                padding: 0;
                 display: flex;
                 li:hover {
                   background-color: rgba(0, 0, 0, 0.8);
@@ -37,13 +38,12 @@
                   transition: 0.5s;
                 }
                 li {
+                  width: max-content;
                   list-style-type: none;
                   margin: 1rem;
                   background-color: rgba(0, 0, 0, 0.4);
-                  padding-left: 2.5%;
-                  padding-right: 2.5%;
-                  padding-top: 1%;
-                  padding-bottom: 1%;
+                  padding: 1.2rem;
+                  margin: 0.5rem;
                   border-bottom: white 5px solid;
                   a {
                     text-transform: uppercase;
@@ -58,11 +58,83 @@
               display: flex;
               justify-content: center;
               width: fit-content;
-              div {
+              div.img {
                 margin: 0.5rem;
                 width: 200px;
                 height: 200px;
                 border: 1px white solid;
+                background-image: url(../../../assets/img/spriteweb.png);
+                background-size: 800px;
+                background-position: -581px -11px;
+                background-repeat: no-repeat;
+                display: flex;
+                span {
+                  background-color: rgba(255, 255, 255, 0.6);
+                  width: 100%;
+                  height: 20%;
+                  text-align: center;
+                  align-items: center;
+                  padding-top: 2rem;
+                }
+                span:hover {
+                  background-color: rgba(255, 255, 255, 0.9);
+                }
+              }
+            }
+            section.img-text-img {
+              display: flex;
+              background-color: rgba(0, 0, 0, 0.4);
+              flex-direction: column;
+              margin: 0.5rem;
+              div {
+                width: 640px;
+                margin: 0.5rem;
+                background-color: white;
+                display: flex;
+                div {
+                  width: 240px;
+                  height: 90%;
+                  background-image: url(../../../assets/img/spriteweb.png);
+                  background-size: 650px;
+                  background-repeat: no-repeat;
+                  background-position: 0px -150px;
+                }
+                p {
+                  width: 240px;
+                }
+                div:nth-child(1) {
+                  background-image: url(../../../assets/img/spriteweb.png);
+                  background-position: -425px -763px;
+                  background-size: 1250px;
+                }
+              }
+            }
+
+            footer {
+              height: min-content;
+              width: 650px;
+              background-color: white;
+              div {
+                background-image: url(../../../assets/img/spriteweb.png);
+                background-repeat: no-repeat;
+                background-size: 700px;
+                background-position: -434px -375px;
+                background-color: black;
+                height: 150px;
+                width: 250px;
+                margin-left: auto;
+                margin-right: auto;
+              }
+              nav{
+                ul{
+                  justify-content: center;
+                  li{
+                    padding: 1rem;
+                  }
+                  li:hover{
+                    border-color: green;
+                  }
+                }
               }
             }
           }
@@ -86,16 +158,62 @@
       </nav>
 
       <section>
-        <div>
-          <span>Spritt 01</span>
+        <div class="img">
+          <span><strong>Sprite 01</strong></span>
         </div>
-        <div>
-          <span>Spritt 02</span>
+        <div class="img">
+          <span><strong>Sprite 02</strong></span>
         </div>
-        <div>
-          <span>Spritt 03</span>
+        <div class="img">
+          <span><strong>Sprite 03</strong></span>
         </div>
       </section>
+
+      <section class="img-text-img">
+        <div>
+          <div></div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, a
+            pariatur atque assumenda iusto doloribus. Recusandae ducimus maxime
+            ad, nisi, omnis dolor voluptates eligendi minus incidunt, et sint
+            praesentium distinctio?
+          </p>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, a
+            pariatur atque assumenda iusto doloribus. Recusandae ducimus maxime
+            ad, nisi, omnis dolor voluptates eligendi minus incidunt, et sint
+            praesentium distinctio?
+          </p>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, a
+            pariatur atque assumenda iusto doloribus. Recusandae ducimus maxime
+            ad, nisi, omnis dolor voluptates eligendi minus incidunt, et sint
+            praesentium distinctio?
+          </p>
+          <div></div>
+        </div>
+      </section>
+
+      <footer>
+        <div></div>
+        <nav>
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Portafolio</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+      </footer>
     </main>
   </body>
 </html>
