@@ -1,40 +1,115 @@
-<DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Selectors</title>
     <link rel="stylesheet" href="../../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../../assets/css/style-css.css" />
-    <link rel="shortcut icon" href="../../../assets/img/logo-html.png" type="image/x-icon">
-</head>
+    <link rel="stylesheet" href="style-css.css" />
+    <link
+      rel="shortcut icon"
+      href="../../../assets/img/logo-html.png"
+      type="image/x-icon"
+    />
+  </head>
 
-<body>
-
-    <div id="orb-container"
-        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;">
-        <canvas id="orbCanvas"></canvas>
-        <canvas id="" style="position: absolute; top: 0; left: 0;"></canvas>
+  <body>
+    <div
+      id="orb-container"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+      "
+    >
+      <canvas id="orbCanvas"></canvas>
     </div>
+
     <a class="btn-home" href="../">
-        <svg xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 640 640">
-            <path
-                d="M41.4 342.6C28.9 330.1 28.9 309.8 41.4 297.3L169.4 169.3C178.6 160.1 192.3 157.4 204.3 162.4C216.3 167.4 224 179.1 224 192L224 256L560 256C586.5 256 608 277.5 608 304L608 336C608 362.5 586.5 384 560 384L224 384L224 448C224 460.9 216.2 472.6 204.2 477.6C192.2 482.6 178.5 479.8 169.3 470.7L41.3 342.7z" />
-    </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 640 640"
+        style="width: 20px; fill: currentColor"
+      >
+        <path
+          d="M41.4 342.6C28.9 330.1 28.9 309.8 41.4 297.3L169.4 169.3C178.6 160.1 192.3 157.4 204.3 162.4C216.3 167.4 224 179.1 224 192L224 256L560 256C586.5 256 608 277.5 608 304L608 336C608 362.5 586.5 384 560 384L224 384L224 448C224 460.9 216.2 472.6 204.2 477.6C192.2 482.6 178.5 479.8 169.3 470.7L41.3 342.7z"
+        />
+      </svg>
     </a>
 
     <main>
-        <header>
-            <h1>New Selectors</h1>
-            <h2>Modern ways to select elements.</h2>
-        </header>
-        <section></section>
+      <header>
+        <h1>New Selectors</h1>
+        <h2>Ejemplos sencillos de selectores modernos</h2>
+      </header>
+
+      <section>
+        <div class="caja">
+          <p>pepe1</p>
+          <ul>
+            <li>(p ~ ul)</li>
+          </ul>
+
+          <div class="links-caja">
+            <a src="https:\\blanckwebpages.com">https</a>
+            <a src="documento.pdf">pdf</a>
+            <a src="https://google.com/search">Buscar en Google</a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <p>(first-of-type / nth-child(1))</p>
+          <span>soy un span </span>
+          <p>(nth-of-type(2) / nth-child(3))</p>
+          <p>(nth-last-child(2) / nth-last-of-type(2))</p>
+          <p>(last-of-type / last-child)</p>
+        </div>
+
+        <div class="caja">
+          <div class="padre-unico-tipo">
+            <p>(only-of-type)</p>
+            <span>span</span>
+          </div>
+        </div>
+
+        <div class="caja">
+          <div class="padre-unico-hijo">
+            <p>(only-child)</p>
+          </div>
+        </div>
+
+        <div class="caja">
+          <p>Abajo hay un div vacío oculto/detectado por CSS:</p>
+          <div class="div-vacio"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="caja">
+          <a href="#noticias" class="btn-trigger">Target</a>
+          <div id="noticias">(:target)!</div>
+
+          <div class="form-caja">
+            <label><input type="text" value="(:enabled)" /></label>
+            <label><input type="text" value="(:disabled)" disabled /></label>
+            <label><input type="checkcaja" checked /></label>
+          </div>
+
+          <div class="filtro-caja">
+            <p>pepe</p>
+            <span class="no-p">no pepe</span>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="../../../assets/js/stars.js"></script>
     <script src="../../../assets/js/orbs.js"></script>
-</body>
-
+  </body>
 </html>
