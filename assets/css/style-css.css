@@ -750,3 +750,14 @@ a[src*="google"] {
   background: #a478d1;
   color: #000;
 }
+
+div.box-model {
+  border-radius: 15px;
+  border: 1px solid black;
+  width: 200px !important;
+  height: 200px !important;
+}
+
+div.box-shadow {
+  box-shadow: 10px 10px 5px #666;
+}
