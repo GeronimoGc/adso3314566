@@ -1,39 +1,95 @@
-<DOCTYPE html>
-    <html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Media Queries</title>
-        <link rel="stylesheet" href="../../../assets/css/style.css" />
-        <link rel="stylesheet" href="../../../assets/css/style-css.css" />
-        <link rel="shortcut icon" href="../../../assets/img/logo-html.png" type="image/x-icon">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            transition: all 0.5s ease-in;
+        }
+        body {
+            font-family: Poppins, sans-serif;
+            background-color: #003675;
+            color: #fff;
+            margin: 0;
+        }
+        main {
+            padding: 4rem;
+        }
+        main header figure.logo {
+            background: url(../../../assets/img/pepsi01.png) no-repeat center/contain;
+            height: 354px;
+            width: 100%;
+            max-width: 919px;
+            margin: 0 auto;
+        }
+        main section h1 {
+            text-align: center;
+        }
+        main section h1 span.md,
+        main section h1 span.sm {
+            display: none;
+        }
+        main section p {
+            margin-block: 4rem;
+            text-align: justify;
+            line-height: 2rem;
+        }
+        @media (max-width: 1024px) {
+            body {
+                background-color: #e21237;
+            }
+            main header figure.logo {
+                background-image: url(../../../assets/img/pepsi02.png);
+            }
+            main section h1 span.lg {
+                display: none;
+            }
+            main section h1 span.md {
+                display: inline;
+            }
+        }
+        @media (max-width: 780px) {
+            body {
+                background-color: #000000;
+            }
+            main {
+                padding: 1.5rem;
+            }
+            main header figure.logo {
+                background-image: url(../../../assets/img/pepsi03.png);
+            }
+            main section h1 span.md {
+                display: none;
+            }
+            main section h1 span.sm {
+                display: inline;
+            }
+        }
+    </style>
+</head>
 
-    <body>
+<body>
+    <main>
+        <header>
+            <figure class="logo"></figure>
+        </header>
+        <section>
+            <h1>
+                Media Queries:
+                <span class="lg"> (> 1024px) 🖥️Desktop </span>
+                <span class="md"> (&lt; 1024px) 💻Tablet </span>
+                <span class="sm"> (&lt; 780px) 📱Mobile </span>
+            </h1>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti officiis ex harum alias velit
+                repellat, ad soluta eos! Omnis accusamus eligendi enim quam, sed vitae quas, maxime culpa vero,
+                exercitationem repellendus sit error quod esse ab odit qui possimus adipisci dolorum.
+            </p>
+        </section>
+    </main>
+</body>
 
-        <div id="orb-container"
-            style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;">
-            <canvas id="orbCanvas"></canvas>
-            <canvas id="" style="position: absolute; top: 0; left: 0;"></canvas>
-        </div>
-        <a class="btn-home" href="../">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                <path
-                    d="M41.4 342.6C28.9 330.1 28.9 309.8 41.4 297.3L169.4 169.3C178.6 160.1 192.3 157.4 204.3 162.4C216.3 167.4 224 179.1 224 192L224 256L560 256C586.5 256 608 277.5 608 304L608 336C608 362.5 586.5 384 560 384L224 384L224 448C224 460.9 216.2 472.6 204.2 477.6C192.2 482.6 178.5 479.8 169.3 470.7L41.3 342.7z" />
-                </ /svg>
-        </a>
-
-        <main>
-            <header>
-                <h1>Media Queries</h1>
-                <h2>Responsive design rules.</h2>
-            </header>
-            <section></section>
-        </main>
-
-        <script src="../../../assets/js/stars.js"></script>
-        <script src="../../../assets/js/orbs.js"></script>
-    </body>
-
-    </html>
+</html>
