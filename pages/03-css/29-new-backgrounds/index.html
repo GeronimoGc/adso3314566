@@ -1,40 +1,153 @@
 <DOCTYPE html>
-<html lang="es">
+  <html lang="es">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>New Backgrounds</title>
+      <link rel="stylesheet" href="../../../assets/css/style.css" />
+      <link rel="stylesheet" href="../../../assets/css/style-css.css" />
+      <link
+        rel="shortcut icon"
+        href="../../../assets/img/logo-html.png"
+        type="image/x-icon"
+      />
+      <style>
+        div.multiples {
+          background: url(../../../assets/img/bg3.png), url(../../../assets/img/bg2.png), url(../../../assets/img/bg1.png);
+          height: 453px;
+        }
+        section div {
+          border: 4px solid #000d;
+          border-radius: 10px;
+          margin: 1rem auto;
+          height: 200px;
+          width: 320px;
+        }
+        div.gradient1 {
+          background: linear-gradient(to top, #100441, #7575ea);
+        }
+        div.gradient2 {
+          background: linear-gradient(45deg, #87ea87, #033109);
+        }
+        div.gradient3 {
+          background: linear-gradient(
+            to bottom,
+            #ffcd00 50%,
+            #003087 50%,
+            #003087 75%,
+            #c8102e 75%
+          );
+        }
+        div.gradient4 {
+          background: linear-gradient(to right, #fff 50%, #333 50%);
+          background-size: 37px;
+        }
+        div.gradient5 {
+          background: radial-gradient(circle, #caa1e7, #210337);
+        }
+        div.gradient6 {
+          background: radial-gradient(
+            circle,
+            #fff 20%,
+            #333 20%,
+            #333 40%,
+            #fff 40%,
+            #fff 60%,
+            #333 60%,
+            #333 80%,
+            #fff 80%
+          );
+        }
+        div.gradient7 {
+          background: conic-gradient(red, orange, yellow, green, blue);
+        }
+        main section h4 {
+          margin: 0;
+          text-align: center;
+          font-weight: 900;
+          font-size: 8rem;
+        }
+        h4.clip1 {
+          background: linear-gradient(45deg, #82009f 0%, #f7345e 100%);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        h4.clip2 {
+          background: url(../../../assets/img/bgfire.jpg) no-repeat center;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        div.mask {
+          width: 120px;
+          height: 120px;
+          background: linear-gradient(to top, red, yellow);
+          margin: 2rem auto;
+          zoom: 2.4;
+          mask-image: url(../../../assets/img/android.svg);
+          mask-size: 100% 100%;
+        }
+      </style>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Backgrounds</title>
-    <link rel="stylesheet" href="../../../assets/css/style.css" />
-    <link rel="stylesheet" href="../../../assets/css/style-css.css" />
-    <link rel="shortcut icon" href="../../../assets/img/logo-html.png" type="image/x-icon">
-</head>
-
-<body>
-
-    <div id="orb-container"
-        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;">
+    <body>
+      <div
+        id="orb-container"
+        style="
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+          pointer-events: none;
+        "
+      >
         <canvas id="orbCanvas"></canvas>
-        <canvas id="" style="position: absolute; top: 0; left: 0;"></canvas>
-    </div>
-    <a class="btn-home" href="../">
-        <svg xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 640 640">
-            <path
-                d="M41.4 342.6C28.9 330.1 28.9 309.8 41.4 297.3L169.4 169.3C178.6 160.1 192.3 157.4 204.3 162.4C216.3 167.4 224 179.1 224 192L224 256L560 256C586.5 256 608 277.5 608 304L608 336C608 362.5 586.5 384 560 384L224 384L224 448C224 460.9 216.2 472.6 204.2 477.6C192.2 482.6 178.5 479.8 169.3 470.7L41.3 342.7z" />
-    </svg>
-    </a>
+        <canvas id="" style="position: absolute; top: 0; left: 0"></canvas>
+      </div>
+      <a class="btn-home" href="../">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+          <path
+            d="M41.4 342.6C28.9 330.1 28.9 309.8 41.4 297.3L169.4 169.3C178.6 160.1 192.3 157.4 204.3 162.4C216.3 167.4 224 179.1 224 192L224 256L560 256C586.5 256 608 277.5 608 304L608 336C608 362.5 586.5 384 560 384L224 384L224 448C224 460.9 216.2 472.6 204.2 477.6C192.2 482.6 178.5 479.8 169.3 470.7L41.3 342.7z"
+          />
+        </svg>
+      </a>
 
-    <main>
+      <main>
         <header>
-            <h1>New Backgrounds</h1>
-            <h2>Gradients, multiple backgrounds, and clip.</h2>
+          <h1>New Backgrounds</h1>
+          <h2>Gradients, multiple backgrounds, and clip.</h2>
         </header>
-        <section></section>
-    </main>
+        <section>
+          <h3>Bgs Multiples:</h3>
+          <div class="multiples"></div>
+          <h3>Bgs Gradients:</h3>
+          <h5>linear-gradient(to direction, color1, color2)</h5>
+          <div class="gradient1"></div>
+          <h5>linear-gradient(degrees, color1, color2)</h5>
+          <div class="gradient2"></div>
+          <h5>Colombia Flag</h5>
+          <div class="gradient3"></div>
+          <h5>Vertical Lines</h5>
+          <div class="gradient4"></div>
+          <h5>radial-gradient(shape, color1, color2)</h5>
+          <div class="gradient5"></div>
+          <h5>BullsEye</h5>
+          <div class="gradient6"></div>
+          <h5>conic-gradient(color1, color2)</h5>
+          <div class="gradient7"></div>
+          <h3>Bgs Clip:</h3>
+          <h4 class="clip1">ADSO</h4>
+          <h4 class="clip2">fire</h4>
+          <h3>Bg Mask:</h3>
+          <div class="mask"></div>
+        </section>
+      </main>
 
-    <script src="../../../assets/js/stars.js"></script>
-    <script src="../../../assets/js/orbs.js"></script>
-</body>
-
-</html>
+      <script src="../../../assets/js/stars.js"></script>
+      <script src="../../../assets/js/orbs.js"></script>
+    </body>
+  </html>
+</DOCTYPE>

@@ -256,3 +256,17 @@ body {
         opacity: 0;
     }
 }
+
+/* Disabled link style: visual opacity and no pointer interaction */
+.disabled,
+a.disabled {
+    opacity: 0.45 !important;
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+    filter: grayscale(40%) contrast(85%) !important;
+}
+
+/* For accessibility: indicate visually disabled state on children too */
+.disabled * {
+    pointer-events: none !important;
+}
