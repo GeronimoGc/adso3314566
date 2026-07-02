@@ -67,6 +67,7 @@
             div {
               display: flex;
               flex-direction: row;
+              flex-wrap: wrap;
               width: 90%;
               margin-top: 1rem;
               margin-left: 1.5rem;
@@ -74,10 +75,11 @@
               justify-content: center;
               div {
                 height: 150px;
-                width: 150px;
+                width: calc(25% - 1rem);
+                margin: 0.5rem;
                 span {
                   margin-top: auto;
-                  width: 150px;
+                  width: 100%;
                   height: 40px;
                   text-align: center;
                   color: white;
@@ -103,6 +105,195 @@
             }
           }
         }
+
+        @media (min-width: 1200px) {
+          body {
+            width: 70%;
+            header {
+              div {
+                width: 90%;
+                div {
+                  width: calc(25% - 1rem);
+                }
+              }
+            }
+          }
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+          body {
+            width: 80%;
+            header {
+              img {
+                width: 75%;
+              }
+              div {
+                width: 95%;
+                div {
+                  height: 140px;
+                  width: calc(50% - 1rem);
+                  span {
+                    font-size: 0.9rem;
+                  }
+                }
+              }
+            }
+            main {
+              article {
+                width: 85%;
+                img {
+                  width: 280px;
+                }
+              }
+            }
+          }
+        }
+
+        @media (min-width: 576px) and (max-width: 767px) {
+          body {
+            width: 85%;
+            header {
+              img {
+                width: 80%;
+              }
+              div {
+                width: 100%;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+                div {
+                  height: 120px;
+                  width: calc(50% - 1rem);
+                  margin: 0.5rem;
+                  span {
+                    font-size: 0.8rem;
+                    height: 35px;
+                  }
+                }
+              }
+            }
+            main {
+              article {
+                width: 90%;
+                flex-direction: column;
+                img {
+                  width: 100%;
+                  max-width: 250px;
+                }
+                div {
+                  p {
+                    font-size: 0.9rem;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        @media (min-width: 480px) and (max-width: 575px) {
+          html {
+            background-position: -200px 200px;
+          }
+          body {
+            width: 90%;
+            header {
+              img {
+                width: 85%;
+              }
+              div {
+                width: 100%;
+                margin-left: 0.3rem;
+                margin-right: 0.3rem;
+                div {
+                  height: 110px;
+                  width: calc(100% - 1rem);
+                  margin: 0.5rem;
+                  span {
+                    font-size: 0.75rem;
+                    height: 30px;
+                    line-height: 30px;
+                  }
+                }
+              }
+            }
+            main {
+              article {
+                width: 95%;
+                flex-direction: column;
+                margin: 0.5rem;
+                img {
+                  width: 100%;
+                  max-width: 200px;
+                  margin: 0 auto 0.5rem;
+                }
+                div {
+                  h2 {
+                    font-size: 1.2rem;
+                  }
+                  p {
+                    font-size: 0.8rem;
+                    padding: 0.75rem;
+                    line-height: 1.4;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        @media (max-width: 479px) {
+          html {
+            background-position: -100px 200px;
+          }
+          body {
+            width: 95%;
+            background-color: rgba(0, 0, 0, 0.65);
+            header {
+              img {
+                width: 90%;
+              }
+              div {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+                margin-top: 0.5rem;
+                div {
+                  height: 100px;
+                  width: calc(100% - 0.8rem);
+                  margin: 0.4rem;
+                  span {
+                    font-size: 0.7rem;
+                    height: 25px;
+                    line-height: 25px;
+                  }
+                }
+              }
+            }
+            main {
+              article {
+                width: 100%;
+                flex-direction: column;
+                margin: 0.4rem;
+                padding: 0;
+                img {
+                  width: 100%;
+                  max-width: 150px;
+                  margin: 0 auto 0.4rem;
+                }
+                div {
+                  h2 {
+                    font-size: 1.1rem;
+                    margin: 0.3rem 0;
+                  }
+                  p {
+                    font-size: 0.7rem;
+                    padding: 0.5rem;
+                    line-height: 1.3;
+                  }
+                }
+              }
+            }
+          }
+        }
       </style>
     </head>
 
@@ -122,28 +313,28 @@
           <img src="../../../assets/img/Kazuto.webp" alt="" />
           <div>
             <h2>Kazuto Kirigaya (Kirito)</h2>
-            <p></p>
+            <p>Kazuto Kirigaya, conocido como Kirito, es el protagonista principal de Sword Art Online. Es un jugador experimentado en VRMMORPG y fue uno de los primeros en adentrarse en el mundo virtual de Aincrad. Kirito es valiente, determinado y experto en el combate, utilizando principalmente una espada como arma. A lo largo de la serie, se convierte en un jugador de élite y juega un papel crucial en la liberación de Aincrad. Es conocido por su cabello negro, sus ojos negros característicos y su determinación inquebrantable para proteger a sus amigos.</p>
           </div>
         </article>
         <article>
           <img src="../../../assets/img/Asuna_with_Yui_Biprobe.webp" alt="" />
           <div>
             <h2>Asuna Yuuki (Asuna)</h2>
-            <p></p>
+            <p>Asuna Yuuki es una de las protagonistas principales de Sword Art Online y la heroína romántica. Es una jugadora talentosa y miembro prominente del gremio Knights of Blood (KoB), donde destaca como una vicecomandante. Asuna es conocida por su habilidad en el combate, particularmente con espadas de una sola mano. Tiene una personalidad fuerte y determinada, a pesar de estar atrapada inicialmente en el mundo virtual de Aincrad. Es caracterizada por su cabello castaño rojizo largo, sus ojos grandes y su belleza cautivadora. Su vínculo emocional y romántico con Kirito es uno de los pilares de la trama.</p>
           </div>
         </article>
         <article>
           <img src="../../../assets/img/Shino.webp" alt="" />
           <div>
             <h2>Shino Asada (Sinon)</h2>
-            <p></p>
+            <p>Shino Asada, cuyo alias en línea es Sinon, es una tiradora de élite y personaje importante en el arco Phantom Bullet de Sword Art Online. Es una jugadora profesional de eSports en el juego Gun Gale Online (GGO) donde destaca usando rifles de largo alcance. En el mundo real, Shino es una joven con un pasado traumático, pero que ha aprendido a superar sus miedos participando en las aventuras virtuales. Tiene cabello rubio platinado, ojos azul claro y es conocida por su personalidad confiada pero cautelosa. Su amistad y conexión con Kirito es significativa, especialmente en su arco de desarrollo personal.</p>
           </div>
         </article>
         <article>
           <img src="../../../assets/img/Suguha_cara.webp" alt="" />
           <div>
             <h2>Suguha Kirigaya (Rifa)</h2>
-            <p></p>
+            <p>Suguha Kirigaya, cuyo alias en línea es Rifa, es la hermana menor de Kazuto y un personaje importante en el arco Alfheim Online. Es una usuarios activa de realidad virtual y se une a Kirito en sus aventuras dentro del juego Alfheim Online, donde juega como un hada de fuego. En el mundo real, Suguha es una estudiante dedicada que practica artes marciales tradicionales, siendo experta en kendo. Tiene cabello largo castaño rojizo similar al de su hermano Kazuto, ojos grandes y expresivos. Su relación con Kirito es profunda y compleja, ya que descubre los secretos de su hermano mientras luchan juntos en el mundo virtual.</p>
           </div>
         </article>
       </main>
