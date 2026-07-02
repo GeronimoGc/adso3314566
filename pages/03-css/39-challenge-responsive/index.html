@@ -13,7 +13,7 @@
           background-image: url(../../../assets/img/SAO-wallpaper.jpg);
           background-repeat: no-repeat;
           background-size: cover;
-          background-position: 0px 0px;
+          background-position: -360px, 200px;
         }
         body {
           width: 70%;
@@ -51,6 +51,19 @@
             div.personage_4 {
               background-size: cover;
             }
+
+            div.personage_1:hover,
+            div.personage_2:hover,
+            div.personage_3:hover,
+            div.personage_4:hover {
+              span {
+                height: 50px;
+                background-color: rgba(0, 0, 0, 0.7);
+                transition:
+                  background-color 1s,
+                  height 1s;
+              }
+            }
             div {
               display: flex;
               flex-direction: row;
@@ -69,15 +82,23 @@
                   text-align: center;
                   color: white;
                   background-color: rgba(0, 0, 0, 0.4);
-
-                  &:hover {
-                    height: 50px;
-                    background-color: rgba(0, 0, 0, 0.7);
-                    transition:
-                      background-color 1s,
-                      height 1s;
-                  }
                 }
+              }
+            }
+          }
+          main {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            article {
+              display: flex;
+              width: 80%;
+              margin: 1rem;
+              background-color: rgba(255,255,255, .6);
+              border-radius: 15px;
+              img {
+                margin: .5rem;
+                width: 300px;
               }
             }
           }
@@ -95,6 +116,37 @@
           <div class="personage_4"><span>Suguha Kirigaya (Rifa)</span></div>
         </div>
       </header>
+
+      <main>
+        <article>
+          <img src="../../../assets/img/Kazuto.webp" alt="" />
+          <div>
+            <h2>Kazuto Kirigaya (Kirito)</h2>
+            <p></p>
+          </div>
+        </article>
+        <article>
+          <img src="../../../assets/img/Asuna_with_Yui_Biprobe.webp" alt="" />
+          <div>
+            <h2>Asuna Yuuki (Asuna)</h2>
+            <p></p>
+          </div>
+        </article>
+        <article>
+          <img src="../../../assets/img/Shino.webp" alt="" />
+          <div>
+            <h2>Shino Asada (Sinon)</h2>
+            <p></p>
+          </div>
+        </article>
+        <article>
+          <img src="../../../assets/img/Suguha_cara.webp" alt="" />
+          <div>
+            <h2>Suguha Kirigaya (Rifa)</h2>
+            <p></p>
+          </div>
+        </article>
+      </main>
 
       <main></main>
     </body></html
