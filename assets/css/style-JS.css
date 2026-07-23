@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+:root {
+    --color-principal: #ffd700;       /* Amarillo brillante */
+    --color-negro-profundo: #000000;  /* Negro puro */
+    --gris-carbon: #121212;           /* Fondo de tarjetas y elementos oscuros */
+    --blanco-humo: #ffffff;           /* Blanco limpio */
+    --gris-plata: #2b2b2b;            /* Bordes secundarios */
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-negro-profundo);
+    color: var(--blanco-humo);
+    display: flex;
+    font-family: "Kaushan Script", cursive;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    margin: 0;
+    padding: 2rem 1rem;
+    overflow: hidden; /* Evita scroll global en la página */
+}
+
+a.btn-home {
+    position: fixed;
+    border: 2px solid var(--color-principal);
+    border-radius: 50%;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    padding: 0.6rem;
+    top: 1rem;
+    left: 1rem;
+    transition: all 0.4s ease-in;
+    background-color: var(--blanco-humo);
+    z-index: 100;
+
+    svg {
+        fill: var(--color-negro-profundo);
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        background-color: var(--color-principal);
+        border-radius: 15%;
+    }
+}
+
+main {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    background: rgba(10, 10, 10, 0.9);
+    padding: 2rem;
+    border-radius: 2rem;
+    border: 2px solid var(--color-principal);
+    backdrop-filter: blur(8px);
+    max-width: 1100px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.2);
+
+    .header {
+        flex-shrink: 0;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin: 0 0 0.5rem 0;
+        color: var(--color-principal);
+        text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    }
+
+    img {
+        border: 6px solid var(--color-principal);
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+        display: block;
+        margin: 0 auto 0.5rem auto;
+        object-fit: cover;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    }
+
+    h4 {
+        text-align: center;
+        font-size: 1.1rem;
+        margin: 0 0 1.5rem 0;
+        color: var(--blanco-humo);
+    }
+
+    /* Menú con altura fija y scroll interno en 2 columnas (Totalmente estático sin saltos al pasar el mouse) */
+    menu.menu-scroll {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0.5rem 1rem 0.5rem 0.5rem;
+        margin: 0;
+        list-style: none;
+        max-height: 48vh; 
+        overflow-y: auto;  
+
+        /* Personalización de la barra de scroll en tonos amarillo y negro */
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background: var(--color-negro-profundo);
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: var(--gris-plata);
+            border-radius: 10px;
+            &:hover {
+                background: var(--color-principal);
+            }
+        }
+
+        .menu-column {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        a:link,
+        a:visited {
+            text-decoration: none;
+            color: var(--blanco-humo);
+            background-color: var(--gris-carbon);
+            display: flex;
+            align-items: center;
+            border-radius: 6rem;
+            border: 3px solid var(--gris-plata);
+            padding: 0.4rem;
+            /* Transición limpia y sin desplazamientos */
+            transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+
+            span {
+                background-color: var(--gris-plata);
+                color: var(--color-principal);
+                border-radius: 50%;
+                display: flex;
+                font-size: 1.4rem;
+                font-weight: bold;
+                justify-content: center;
+                align-items: center;
+                height: 50px;
+                width: 50px;
+                flex-shrink: 0;
+                text-shadow: 2px 2px 4px var(--color-negro-profundo);
+            }
+
+            aside {
+                flex-grow: 1;
+                text-align: left;
+                padding-left: 1rem;
+
+                h4 {
+                    margin: 0;
+                    font-size: 1rem;
+                    text-align: left;
+                    color: var(--blanco-humo);
+                }
+            }
+
+            &:hover {
+                border-color: var(--color-principal);
+                background-color: #1a1a1a;
+                box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+                /* Sin scale ni translateX para evitar cualquier movimiento indeseado */
+            }
+        }
+    }
+}
+
+#vanta-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 850px) {
+    main {
+        max-height: 95vh;
+        padding: 1.5rem 1rem;
+    }
+    main menu.menu-scroll {
+        grid-template-columns: 1fr;
+        max-height: 50vh;
+    }
+}

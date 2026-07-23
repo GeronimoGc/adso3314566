@@ -1,14 +1,267 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADSO | 3314566 - JavaScript</title>
+    <link rel="stylesheet" href="../../assets/css/style-JS.css" />
+    <link
+      rel="shortcut icon"
+      href="../../assets/img/logo-css.png"
+      type="image/x-icon"
+    />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>emmet</title>
-</head>
+  <body>
 
-<body>
+    <!-- Contenedor para el fondo animado con JS -->
+    <div id="vanta-bg"></div>
 
-</body>
+    <a class="btn-home" href="../../" title="Inicio">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        fill="#000000"
+        viewBox="0 0 256 256"
+      >
+        <path
+          d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"
+        ></path>
+      </svg>
+    </a>
 
+    <main>
+      <header class="header">
+        <h1>JavaScript</h1>
+        <div class="card">
+          <img src="../../assets/img/logo-js.png" alt="JavaScript Logo" />
+        </div>
+        <h4>
+          JavaScript is a programming language for web development and
+          interactive applications
+        </h4>
+      </header>
+      
+      <menu class="menu-scroll">
+        <!-- Columna 1: Elementos del 01 al 16 -->
+        <div class="menu-column">
+          <a href="01-write/">
+            <span>01</span>
+            <aside>
+              <h4>Write</h4>
+            </aside>
+          </a>
+          <a href="02-comments/">
+            <span>02</span>
+            <aside>
+              <h4>Comments</h4>
+            </aside>
+          </a>
+          <a href="03-get-elements/">
+            <span>03</span>
+            <aside>
+              <h4>Get Elements</h4>
+            </aside>
+          </a>
+          <a href="04-variables/">
+            <span>04</span>
+            <aside>
+              <h4>Variables</h4>
+            </aside>
+          </a>
+          <a href="05-methods-object/">
+            <span>05</span>
+            <aside>
+              <h4>Methods Object</h4>
+            </aside>
+          </a>
+          <a href="06-types-objects/">
+            <span>06</span>
+            <aside>
+              <h4>Types Objects</h4>
+            </aside>
+          </a>
+          <a href="07-vehicle-object/">
+            <span>07</span>
+            <aside>
+              <h4>Vehicle Object</h4>
+            </aside>
+          </a>
+          <a href="08-functions/">
+            <span>08</span>
+            <aside>
+              <h4>Functions</h4>
+            </aside>
+          </a>
+          <a href="09-challenge-calculator/">
+            <span>09</span>
+            <aside>
+              <h4>Challenge Calculator</h4>
+            </aside>
+          </a>
+          <a href="10-operators-arithmetics/">
+            <span>10</span>
+            <aside>
+              <h4>Operators Arithmetics</h4>
+            </aside>
+          </a>
+          <a href="11-operators-assignment/">
+            <span>11</span>
+            <aside>
+              <h4>Operators Assignment</h4>
+            </aside>
+          </a>
+          <a href="12-operators-comparison/">
+            <span>12</span>
+            <aside>
+              <h4>Operators Comparison</h4>
+            </aside>
+          </a>
+          <a href="13-operators-logical/">
+            <span>13</span>
+            <aside>
+              <h4>Operators Logical</h4>
+            </aside>
+          </a>
+          <a href="14-conditionals/">
+            <span>14</span>
+            <aside>
+              <h4>Conditionals</h4>
+            </aside>
+          </a>
+          <a href="15-challenge-conditionals/">
+            <span>15</span>
+            <aside>
+              <h4>Challenge Conditionals</h4>
+            </aside>
+          </a>
+          <a href="16-loops/">
+            <span>16</span>
+            <aside>
+              <h4>Loops</h4>
+            </aside>
+          </a>
+        </div>
+        
+        <!-- Columna 2: Elementos del 17 al 32 -->
+        <div class="menu-column">
+          <a href="17-pokedex-api/">
+            <span>17</span>
+            <aside>
+              <h4>Pokedex API</h4>
+            </aside>
+          </a>
+          <a href="18-events/">
+            <span>18</span>
+            <aside>
+              <h4>Events</h4>
+            </aside>
+          </a>
+          <a href="19-methods-strings/">
+            <span>19</span>
+            <aside>
+              <h4>Methods Strings</h4>
+            </aside>
+          </a>
+          <a href="20-methods-numbers/">
+            <span>20</span>
+            <aside>
+              <h4>Methods Numbers</h4>
+            </aside>
+          </a>
+          <a href="21-methods-mathematics/">
+            <span>21</span>
+            <aside>
+              <h4>Methods Mathematics</h4>
+            </aside>
+          </a>
+          <a href="22-challenge-baloto/">
+            <span>22</span>
+            <aside>
+              <h4>Challenge Baloto</h4>
+            </aside>
+          </a>
+          <a href="23-methods-dates/">
+            <span>23</span>
+            <aside>
+              <h4>Methods Dates</h4>
+            </aside>
+          </a>
+          <a href="24-methods-arrays/">
+            <span>24</span>
+            <aside>
+              <h4>Methods Arrays</h4>
+            </aside>
+          </a>
+          <a href="25-challenge-arrays/">
+            <span>25</span>
+            <aside>
+              <h4>Challenge Arrays</h4>
+            </aside>
+          </a>
+          <a href="26-events-time/">
+            <span>26</span>
+            <aside>
+              <h4>Events Time</h4>
+            </aside>
+          </a>
+          <a href="27-challenge-events-time/">
+            <span>27</span>
+            <aside>
+              <h4>Challenge Events Time</h4>
+            </aside>
+          </a>
+          <a href="28-pop-up-windows/">
+            <span>28</span>
+            <aside>
+              <h4>Pop Up Windows</h4>
+            </aside>
+          </a>
+          <a href="29-localstorage/">
+            <span>29</span>
+            <aside>
+              <h4>Localstorage</h4>
+            </aside>
+          </a>
+          <a href="30-map-filter-reduce/">
+            <span>30</span>
+            <aside>
+              <h4>Map Filter Reduce</h4>
+            </aside>
+          </a>
+          <a href="31-json-data/">
+            <span>31</span>
+            <aside>
+              <h4>Json Data</h4>
+            </aside>
+          </a>
+          <a href="32-onenterframe/">
+            <span>32</span>
+            <aside>
+              <h4>Onenterframe</h4>
+            </aside>
+          </a>
+        </div>
+      </menu>
+    </main>
+
+    <!-- Librerías de JavaScript para el fondo animado interactivo (Vanta.net + Three.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+      VANTA.NET({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xffd700,
+        backgroundColor: 0x000000
+      });
+    </script>
+  </body>
 </html>
