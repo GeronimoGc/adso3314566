@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADSO | Onenterframe</title>
+    <link rel="stylesheet" href="../../../assets/css/style-JS.css" />
+    <link
+      rel="shortcut icon"
+      href="../../../assets/img/logo-css.png"
+      type="image/x-icon"
+    />
+  </head>
+
+  <body>
+
+    <!-- Fondo animado -->
+    <div id="vanta-bg"></div>
+
+    <!-- Botón para regresar al menú principal -->
+    <a class="btn-home" href="../" title="Volver al menú">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        fill="#000000"
+        viewBox="0 0 256 256"
+      >
+        <path
+          d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"
+        ></path>
+      </svg>
+    </a>
+
+    <main>
+      <header class="header">
+        <h1>Onenterframe</h1>
+        <div class="card">
+          <img src="../../../assets/img/logo-js.png" alt="JavaScript Logo" />
+        </div>
+        <h4>
+          Ejecuta código en cada fotograma para animaciones.
+        </h4>
+      </header>
+
+      <!-- Section vacía para el contenido futuro -->
+      <section class="content-section">
+        <!-- Aquí irá el contenido específico de la página -->
+      </section>
+    </main>
+
+    <!-- Scripts de Vanta.js y Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+      VANTA.NET({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xffd700,
+        backgroundColor: 0x000000
+      });
+    </script>
+  </body>
+</html>
