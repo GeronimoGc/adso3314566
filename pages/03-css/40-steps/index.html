@@ -8,6 +8,70 @@
         <link rel="stylesheet" href="../../../assets/css/style.css" />
         <link rel="stylesheet" href="../../../assets/css/style-css.css" />
         <link rel="shortcut icon" href="../../../assets/img/logo-html.png" type="image/x-icon">
+            <style>
+        :root {
+            --size-step: calc(1024px/4);
+        }
+        section div.bg {
+            background: url(imgs/bg-steps.png) 
+                        no-repeat center /cover;
+            border-radius: 4px;
+            height: 560px;
+            margin: 0.2rem auto;
+            position: relative;
+            width: 380px;
+        }
+        section div.bg div.steps {
+            background: url(imgs/steps-all.png) no-repeat;
+            height: var(--size-step);
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--size-step);
+            animation: animSteps 0.4s steps(4) infinite;
+        }
+        section div.bg div.steps.front {
+            background-position-y: calc(var(--size-step)*0);
+        }
+        section div.bg div.steps.left {
+            background-position-y: calc(var(--size-step)*-1);
+        }
+        section div.bg div.steps.right {
+            background-position-y: calc(var(--size-step)*-2);
+        }
+        section div.bg div.steps.back {
+            background-position-y: calc(var(--size-step)*-3);
+        }
+        section div.bg div.controls {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 1rem;
+            gap: 0.3rem;
+            align-items: center;
+        }
+        section div.bg div.controls button {
+            background-color: #fff9;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.4rem;
+            height: 50px;
+            width: 50px;
+            transition: all 0.2s ease-in;
+            &:hover {
+                background-color: #fffc;
+                transform: scale(1.05);
+            }
+        }
+        @keyframes animSteps {
+            100% {
+                background-position-x: -1024px;
+            }
+        }
+
+        </style>
     </head>
 
     <body>
@@ -29,9 +93,75 @@
                 <h1>Steps</h1>
                 <h2>Step-by-step animation of a sprite.</h2>
             </header>
-            <section></section>
+            <section>
+            <div class="bg">
+                <div class="steps front"></div>
+                <div class="controls">
+                    <div class="header">
+                        <button class="btnBack">↑</button>
+                    </div>
+                    <div class="footer">
+                        <button class="btnLeft">←</button>
+                        <button class="btnFront">↓</button>
+                        <button class="btnRight">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
         </main>
 
+        <script>
+        let btnFront = document.querySelector('.btnFront')
+        let btnBack  = document.querySelector('.btnBack')
+        let btnLeft  = document.querySelector('.btnLeft')
+        let btnRight = document.querySelector('.btnRight')
+
+        let steps    = document.querySelector('.steps')
+
+        btnFront.addEventListener('click', () => {
+            removeAllClasses()
+            steps.classList.add('front')
+        })
+
+        btnBack.addEventListener('click', () => {
+            removeAllClasses()
+            steps.classList.add('back')
+        })
+
+        btnLeft.addEventListener('click', () => {
+            removeAllClasses()
+            steps.classList.add('left')
+        })
+
+        btnRight.addEventListener('click', () => {
+            removeAllClasses()
+            steps.classList.add('right')
+        })
+
+        function removeAllClasses() {
+            steps.classList.remove('front', 'back', 'left', 'right')
+        }
+
+        document.addEventListener('keyup', function(e) {
+            if(e.keyCode == 37) {
+                removeAllClasses()
+                steps.classList.add('left')
+            }
+            if(e.keyCode == 38) {
+                removeAllClasses()
+                steps.classList.add('back')
+            }
+            if(e.keyCode == 39) {
+                removeAllClasses()
+                steps.classList.add('right')
+            }
+            if(e.keyCode == 40) {
+                removeAllClasses()
+                steps.classList.add('front')
+            }
+        })
+
+    </script>
         <script src="../../../assets/js/stars.js"></script>
         <script src="../../../assets/js/orbs.js"></script>
     </body>
