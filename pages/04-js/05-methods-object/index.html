@@ -10,14 +10,71 @@
       href="../../../assets/img/logo-js.png"
       type="image/x-icon"
     />
+    <link rel="stylesheet" href="../../../assets/css/animate.min.css">
+    <style>
+        main section h3.pk-name {
+            font-size: 2rem;
+            text-align: center;
+
+        }
+        main section h4 {
+            background-color: #fff9;
+            color: #0009;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 1.6rem;
+            margin: 0 auto;
+            padding: 0.4rem 1rem;
+            width: fit-content;
+        }
+
+        main section figure {
+            background-repeat: no-repeat;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            height: 192px;
+            width: 202px;
+        }
+        main section figure.alive {
+            background-position-x: 0px;
+        }
+        main section figure.attack {
+            background-position-x: -202px;
+        }
+        main section figure.feed {
+            background-position-x: -404px;
+        }
+        main section figure.dead {
+            background-position-x: -608px;
+        }
+        main section div.actions {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 150px;
+            button {
+                background: #fff9;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                padding: 0.4rem 1rem;
+                transition: transform 0.2s ease-in;
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    </style>
+</head>
   </head>
 
   <body>
-
-    
     <div id="vanta-bg"></div>
 
-    
     <a class="btn-home" href="../" title="Volver al menú">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -38,18 +95,96 @@
         <div class="card">
           <img src="../../../assets/img/logo-js.png" alt="JavaScript Logo" />
         </div>
-        <h4>
-          Usa métodos para interactuar con objetos.
-        </h4>
+        <h4>Usa métodos para interactuar con objetos.</h4>
       </header>
 
-      
       <section class="content-section">
-        
+        <h3 class="pk-name"></h3>
+        <h4 class="pk-hp"></h4>
+        <figure class="pk-image animate__animated"></figure>
+        <div class="actions">
+          <button class="btn-attack">Attack 👊🏻</button>
+          <button class="btn-feed">Feed 🌮</button>
+        </div>
       </section>
     </main>
 
-    <
+
+    <script>
+      //Elements
+      const pkName = document.querySelector('.pk-name');
+      const pkHp = document.querySelector('.pk-hp');
+      const pkImage = document.querySelector('.pk-image');
+
+      //btns
+      const btnAttack = document.querySelector('.btn-attack');
+      const btnFeed = document.querySelector('.btn-feed');
+
+      const pokemon = {
+        //attributes
+        name: 'Snorlax',
+        type: 'Normal',
+        hp: 100,
+        image: '../../../assets/img/snorlax-sprite.png',
+        status: 'alive',
+        // Methods
+        render: function() {
+          pkName.innerHTML = `${this.name} <small>[${this.type}]</small>`;
+          pkImage.style.backgroundImage = `url(${this.image})`;
+          this.updateHp('animate__rubberBand');
+          this.updateStatus();
+          },
+          updateHp: function(fx) {
+            pkHp.innerHTML = `HP: ${this.hp}`;
+            pkImage.classList.add(`${this.status}`);
+            
+          },
+          feed: function () {
+            if(this.hp < 200) {
+            this.hp += 25;
+            this.status = 'feed';
+            pkImage.classList.remove('alive', 'attact', 'dead');
+            this.updateHp('animate__rubberBand');
+            this.updateStatus();
+            }
+          },
+          attack: function () {
+            if(this.hp > 0) {
+              this.hp -= 25;
+              this.status = 'attack';
+              pkImage.classList.remove('alive','feed','dead');
+              this.updateHp('animate__rubberBand');
+              this.updateStatus();
+            }
+          },
+          updateStatus: function () {
+            setTimeout(() => {
+              pkImage.classList.remove('animate__rubberBand');
+            }, 1200);
+          }
+        }
+        pokemon.render();
+
+        btnFeed.addEventListener('click', function() {
+          pokemon.feed();
+          this.style.pointerEvents = 'none'
+          this.style.opacity = '0.2'
+          setTimeout(() => {
+            btnFeed.style.pointerEvents = "all";
+            btnFeed.style.opacity = "1";
+          }, 1200);
+        })
+        btnAttack.addEventListener('click', function() {
+          pokemon.attack();
+          this.style.pointerEvents = 'none'
+          this.style.opacity = '0.2'
+          setTimeout(() => {
+            btnAttack.style.pointerEvents = "all";
+            btnAttack.style.opacity = "1";
+          }, 1200);
+        })
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script>
@@ -58,12 +193,12 @@
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
         color: 0xffd700,
-        backgroundColor: 0x000000
+        backgroundColor: 0x000000,
       });
     </script>
   </body>

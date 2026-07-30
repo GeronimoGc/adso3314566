@@ -200,3 +200,7 @@ main {
         max-height: 50vh;
     }
 }
+
+section.content-section {
+    overflow-y: scroll;
+}

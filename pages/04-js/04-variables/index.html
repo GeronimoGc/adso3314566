@@ -13,11 +13,8 @@
   </head>
 
   <body>
-
-    
     <div id="vanta-bg"></div>
 
-    
     <a class="btn-home" href="../" title="Volver al menú">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -38,18 +35,57 @@
         <div class="card">
           <img src="../../../assets/img/logo-js.png" alt="JavaScript Logo" />
         </div>
-        <h4>
-          Almacena y gestiona datos usando variables.
-        </h4>
+        <h4>Almacena y gestiona datos usando variables.</h4>
       </header>
 
-      
       <section class="content-section">
-        
+        <h3>Type String: <small class="type-string"></small></h3>
+        <h3>Type Number: <small class="type-number"></small></h3>
+        <h3>Type Boolean: <small class="type-boolean"></small></h3>
+        <h3>Type Null: <small class="type-null"></small></h3>
+        <h3>Type Undefined: <small class="type-undefined"></small></h3>
+        <h3>Type Array: <small class="type-array"></small></h3>
+        <h3>Type Object: <small class="type-object"></small></h3>
       </section>
     </main>
 
-    <
+    <script>
+      // Type String
+      const tstring = document.querySelector('.type-string');
+      const message = 'Hello JS 💛';
+      tstring.textContent = `${message} - Length: ${message.length} characters`;
+
+      // type number
+      const tnumber = document.querySelector('.type-number');
+      const num1 = '45';
+      const num2 = 12.4;
+      tnumber.textContent = `(45+12.4) => ${parseInt(num1) + num2}`;
+
+
+
+      // type boolean
+
+      const tboolean = document.querySelector('.type-boolean');
+      const isTrue = (4>8);
+      tboolean.textContent = `(4>8) -> ${isTrue}`;
+
+
+      //type array 
+      const tarray = document.querySelector('.type-array');
+      const landscapes = ['🎆','💛','😁','🎆'];
+      tarray.textContent = `Landscapes -> ${landscapes}`
+
+
+      //type object
+      const tobject = document.querySelector('.type-object');
+      const hashira = {
+        name: 'kyojuro rengoku',
+        type:'🔥',
+        age: 20
+      }
+      toobject.textContent = `${hashira.name} -> ${hashira.type}`;
+
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script>
@@ -58,12 +94,12 @@
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
         color: 0xffd700,
-        backgroundColor: 0x000000
+        backgroundColor: 0x000000,
       });
     </script>
   </body>
