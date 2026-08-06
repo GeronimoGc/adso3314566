@@ -113,96 +113,71 @@
 
 
     <script>
-      //Elements
-      const pkName = document.querySelector('.pk-name');
-      const pkHp = document.querySelector('.pk-hp');
-      const pkImage = document.querySelector('.pk-image');
-
-      //btns
-      const btnAttack = document.querySelector('.btn-attack');
-      const btnFeed = document.querySelector('.btn-feed');
-
-      const pokemon = {
-        //attributes
-        name: 'Snorlax',
-        type: 'Normal',
-        hp: 100,
-        image: '../../../assets/img/snorlax-sprite.png',
-        status: 'alive',
-        // Methods
-        render: function() {
-            pkName.innerHTML = `${this.name} <small>[${this.type}]</small>`;
-            pkImage.style.backgroundImage = `url(${this.image})`;
-            this.updateHp('animate__rubberBand');
-            this.updateStatus();
-          },
-          updateHp: function(fx) {
-            pkHp.innerHTML = `HP: ${this.hp}`;
-            pkImage.classList.add(this.status);
-
-            if (fx) {
-              pkImage.classList.remove('animate__rubberBand');
-              void pkImage.offsetWidth; 
-              pkImage.classList.add('animate__animated', fx);
+              // Elements
+        const pkName  = document.querySelector('.pk-name');
+        const pkHp    = document.querySelector('.pk-hp');
+        const pkImage = document.querySelector('.pk-image');
+        // Btns
+        const btnAttack  = document.querySelector('.btn-attack');
+        const btnFeed    = document.querySelector('.btn-feed');
+        // Object
+        const pokemon = {
+            // Attributes
+            name: 'Snorlax',
+            type: 'Normal',
+            hp:   100,
+            image: '../../../assets/img/snorlax-sprite.png',
+            status: 'alive', //alive, dead, attack, feed
+            // Methods
+            render: function() {
+                pkName.innerHTML = `${this.name} <small>[${this.type}]</small>`;
+                pkImage.style.backgroundImage = `url(${this.image})`;
+                this.updateHp('animate__rubberBand');
+                this.updateStatus();
+            },
+            updateHp: function(fx) {
+                pkHp.innerHTML = `HP: ${this.hp}`;
+                pkImage.classList.add(`${this.status}`, fx);
+            },
+            feed: function() {
+                if(this.hp < 200) {
+                    this.hp += 25;
+                    this.status = 'feed';
+                    pkImage.classList.remove('alive', 'attact', 'dead');
+                    this.updateHp('animate__rubberBand');
+                    this.updateStatus();
+                }
+            },
+            attack: function() {
+                if(this.hp > 0) {
+                    this.hp -= 25;
+                    this.status = 'attack';
+                    pkImage.classList.remove('alive', 'feed', 'dead');
+                    this.updateHp('animate__rubberBand');
+                    this.updateStatus();
+                }
+            },
+            updateStatus: function() {
+                setTimeout(() => {
+                    pkImage.classList.remove('animate__rubberBand');
+                }, 1200);
             }
-          },
-          feed: function () {
-            if(this.hp < 200) {
-            this.hp += 25;
-            this.status = 'feed';
-            pkImage.classList.remove('alive', 'attack', 'dead');
-            this.updateHp('animate__rubberBand');
-            this.updateStatus();
-            } else {
-              this.status = 'feed';
-              pkImage.classList.remove('alive', 'attack', 'dead');
-              this.updateHp('animate__rubberBand');
-              this.updateStatus();
-            }
-          },
-          attack: function () {
-            if(this.hp > 0) {
-              this.hp -= 25;
-              this.status = 'attack';
-              pkImage.classList.remove('alive','feed','dead');
-              this.updateHp('animate__rubberBand');
-              this.updateStatus();
-            } else {
-              this.status = 'dead';
-              pkImage.classList.remove('alive','feed','attack');
-              this.updateHp('animate__rubberBand');
-              this.updateStatus();
-            }
-          },
-          updateStatus: function () {
-            setTimeout(() => {
-              pkImage.classList.remove('animate__rubberBand');
-            }, 1200);
-          },
-          disableActions: function () {
-
-          }
-        }
+        };
         pokemon.render();
 
+        // Events
         btnFeed.addEventListener('click', function() {
-          pokemon.feed();
-          this.style.pointerEvents = 'none'
-          this.style.opacity = '0.2'
-          setTimeout(() => {
-            btnFeed.style.pointerEvents = "all";
-            btnFeed.style.opacity = "1";
-          }, 1200);
-        })
+            pokemon.feed();
+            this.style.pointerEvents   = 'none';
+            this.style.opacity         = '0.2';
+            setTimeout(() => {
+                this.style.pointerEvents   = 'all';
+                this.style.opacity         = '1';
+            }, 1500);
+        });
         btnAttack.addEventListener('click', function() {
-          pokemon.attack();
-          this.style.pointerEvents = 'none'
-          this.style.opacity = '0.2'
-          setTimeout(() => {
-            btnAttack.style.pointerEvents = "all";
-            btnAttack.style.opacity = "1";
-          }, 1200);
-        })
+            pokemon.attack();
+        });
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>

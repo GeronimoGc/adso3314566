@@ -13,11 +13,8 @@
   </head>
 
   <body>
-
-    
     <div id="vanta-bg"></div>
 
-    
     <a class="btn-home" href="../" title="Volver al menú">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -38,25 +35,43 @@
         <div class="card">
           <img src="../../../assets/img/logo-js.png" alt="JavaScript Logo" />
         </div>
-        <h4>
-          Comprende y trabaja con diferentes tipos de objetos.
-        </h4>
+        <h4>Comprende y trabaja con diferentes tipos de objetos.</h4>
       </header>
 
-      
       <section class="content-section">
-         <ul class="objects"></ul>
+        <ul class="objects"></ul>
       </section>
     </main>
 
     <script>
       // Elements
-      const objs = document.querySelector('.objects');
-      
+      const objs = document.querySelector(".objects");
+
       // Objects String
 
-      const string = new String('Javascript 💛');
+      const string = new String("Javascript 💛");
       objs.innerHTML = `<li>${string} -> Objects: ${string.constructor.name}</li>`;
+
+      // Objects Number
+      const number = new Number(256);
+      objs.innerHTML += `<li> ${number} -> Object:
+        ${number.constructor.name} </li>`;
+
+      // Object Boolean
+      const bool = new Boolean(512 > 128);
+      objs.innerHTML += `<li>${bool} -> Object: ${bool.constructor.name}</li>`;
+
+      // Object Array
+      const arr = new Array("🚕", "🚑", "🏍️", "🚙", "🚁");
+      objs.innerHTML += `<li>${arr} -> Objects: ${arr.constructor.name}</li>`;
+
+      //object Date
+      const dt = new Date("12/12/2026");
+      objs.innerHTML += `<li>${dt.getFullYear()} -> Object: ${dt.constructor.name}</li>`;
+
+      // object object
+      const obj = new Object('vehicle');
+      objs.innerHTML += `<li>${obj} -> Object: ${obj.constructor.name}</li>`;
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
@@ -66,12 +81,12 @@
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
         color: 0xffd700,
-        backgroundColor: 0x000000
+        backgroundColor: 0x000000,
       });
     </script>
   </body>
