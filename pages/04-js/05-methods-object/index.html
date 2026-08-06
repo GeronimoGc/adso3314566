@@ -138,17 +138,23 @@
             pkHp.innerHTML = `HP: ${this.hp}`;
             pkImage.classList.add(`${this.status}`);
 
+              if (fx) {
+                pkImage.classList.remove('animate__rubberBand');
+                void pkImage.offsetWidth; // forzar reflow si quieres reiniciar la animación
+                pkImage.classList.add(fx);
+  }
+
           },
           feed: function () {
             if(this.hp < 200) {
             this.hp += 25;
             this.status = 'feed';
-            pkImage.classList.remove('alive', 'attact', 'dead');
+            pkImage.classList.remove('alive', 'attack', 'dead');
             this.updateHp('animate__rubberBand');
             this.updateStatus();
             } else {
               this.status = 'feed';
-              pkImage.classList.remove('alive', 'attact', 'dead');
+              pkImage.classList.remove('alive', 'attack', 'dead');
               this.updateHp('animate__rubberBand');
               this.updateStatus();
             }
@@ -162,7 +168,7 @@
               this.updateStatus();
             } else {
               this.status = 'dead';
-              pkImage.classList.remove('alive','feed','attact');
+              pkImage.classList.remove('alive','feed','attack');
               this.updateHp('animate__rubberBand');
               this.updateStatus();
             }
@@ -180,7 +186,6 @@
 
         btnFeed.addEventListener('click', function() {
           pokemon.feed();
-          pokemon.alive();
           this.style.pointerEvents = 'none'
           this.style.opacity = '0.2'
           setTimeout(() => {
@@ -190,7 +195,6 @@
         })
         btnAttack.addEventListener('click', function() {
           pokemon.attack();
-          pokemon.dead();
           this.style.pointerEvents = 'none'
           this.style.opacity = '0.2'
           setTimeout(() => {
