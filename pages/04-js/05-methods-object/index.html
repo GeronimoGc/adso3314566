@@ -129,23 +129,31 @@
         status: 'alive',
         // Methods
         render: function() {
-          pkName.innerHTML = `${this.name} <small>[${this.type}]</small>`;
-          pkImage.style.backgroundImage = `url(${this.image})`;
-          this.updateHp('animate__rubberBand');
-          this.updateStatus();
+            pkName.innerHTML = `${this.name} <small>[${this.type}]</small>`;
+            pkImage.style.backgroundImage = `url(${this.image})`;
+            this.updateHp('animate__rubberBand');
+            this.updateStatus();
           },
           updateHp: function(fx) {
             pkHp.innerHTML = `HP: ${this.hp}`;
             pkImage.classList.add(`${this.status}`);
-            
+            if (fx) {
+              pkImage.classList.remove('animate__rubberBand');
+              pkImage.classList.add(fx);
+            }
           },
           feed: function () {
             if(this.hp < 200) {
             this.hp += 25;
             this.status = 'feed';
-            pkImage.classList.remove('alive', 'attact', 'dead');
+            pkImage.classList.remove('alive', 'attack', 'dead');
             this.updateHp('animate__rubberBand');
             this.updateStatus();
+            } else {
+              this.status = 'feed';
+              pkImage.classList.remove('alive', 'attack', 'dead');
+              this.updateHp('animate__rubberBand');
+              this.updateStatus();
             }
           },
           attack: function () {
@@ -155,12 +163,20 @@
               pkImage.classList.remove('alive','feed','dead');
               this.updateHp('animate__rubberBand');
               this.updateStatus();
+            } else {
+              this.status = 'dead';
+              pkImage.classList.remove('alive','feed','attack');
+              this.updateHp('animate__rubberBand');
+              this.updateStatus();
             }
           },
           updateStatus: function () {
             setTimeout(() => {
               pkImage.classList.remove('animate__rubberBand');
             }, 1200);
+          },
+          disableActions: function () {
+
           }
         }
         pokemon.render();
