@@ -10,7 +10,8 @@
       href="../../../assets/img/logo-js.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="../../../assets/css/animate.min.css">
+    <!-- <link rel="stylesheet" href="../../../assets/css/animate.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <style>
         main section h3.pk-name {
             font-size: 2rem;
@@ -36,6 +37,7 @@
             margin: 0 auto;
             height: 192px;
             width: 202px;
+            transform-origin: center;
         }
         main section figure.alive {
             background-position-x: 0px;
@@ -136,14 +138,13 @@
           },
           updateHp: function(fx) {
             pkHp.innerHTML = `HP: ${this.hp}`;
-            pkImage.classList.add(`${this.status}`);
+            pkImage.classList.add(this.status);
 
-              if (fx) {
-                pkImage.classList.remove('animate__rubberBand');
-                void pkImage.offsetWidth; // forzar reflow si quieres reiniciar la animación
-                pkImage.classList.add(fx);
-  }
-
+            if (fx) {
+              pkImage.classList.remove('animate__rubberBand');
+              void pkImage.offsetWidth; 
+              pkImage.classList.add('animate__animated', fx);
+            }
           },
           feed: function () {
             if(this.hp < 200) {
