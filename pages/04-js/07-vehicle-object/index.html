@@ -180,6 +180,7 @@
             <figure class="reference"></figure>
             <figure class="color"></figure>
           </div>
+          <div><img src="" alt="carro"/></div>
         </div>
       </section>
     </main>
@@ -255,7 +256,7 @@
 
       lnext.addEventListener("click", function () {
         index = (index + 1) % vehicles.attrs.length;
-        console.log(index);
+        // console.log(index);
         car.brand = vehicles.attrs[index].brand;
         car.model = vehicles.attrs[index].model;
         car.refer = vehicles.attrs[index].refer;
@@ -266,9 +267,7 @@
 lprev.addEventListener("click", function () {
     const totalItems = vehicles.attrs.length;
     index = (index - 1 + totalItems) % totalItems; 
-    
-    console.log(index);
-    
+    // console.log(index);
     car.brand = vehicles.attrs[index].brand;
     car.model = vehicles.attrs[index].model;
     car.refer = vehicles.attrs[index].refer;
