@@ -10,14 +10,140 @@
       href="../../../assets/img/logo-js.png"
       type="image/x-icon"
     />
+
+    <style>
+      .content-section {
+        height: fit-content !important;
+        overflow-y: visible !important;
+      }
+      main {
+        max-height: fit-content;
+      }
+      body {
+        overflow-y: scroll;
+      }
+      div.vehicle {
+        &.dark {
+          background-color: black;
+          header {
+            button.mode {
+              background: url(../../../assets/img/mode-dark.svg) no-repeat
+                center;
+              background-position-y: 40%;
+              height: 32px;
+              width: 89px;
+              border: none;
+            }
+          }
+          nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+
+            figure.brand {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 54px;
+              width: 258px;
+              border: 1px solid rgb(65, 68, 79);
+              border-radius: 15px;
+              background-color: rgb(23, 26, 39);
+            }
+
+            button {
+              width: 44px;
+              height: 44px;
+              border: none;
+              cursor: pointer;
+              transition: transform 0.4s ease-in;
+              border-radius: 50px;
+              &.prev {
+                background: url(../../../assets/img/Overlay+Border+OverlayBlur.svg)
+                  no-repeat center;
+
+                &:hover {
+                  transform: translateX(-12px);
+                }
+              }
+              &.next {
+                background: url(../../../assets/img/Overlay+Border+OverlayBlur-1.svg)
+                  no-repeat center;
+                &:hover {
+                  transform: translateX(12px);
+                }
+              }
+            }
+          }
+          div {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 12px;
+            figure {
+              margin: 0;
+              padding: 0;
+              display: flex;
+              align-items: end;
+              justify-content:  center;
+              padding-bottom: 5px;
+              height: 80px;
+              width: 120px;
+              &.model {
+                background: url(../../../assets/img/model.svg) no-repeat
+                  center;
+                  
+              }
+              &.reference {
+                background: url(../../../assets/img/referrarl.svg)
+                  no-repeat center;
+              }
+              &.color {
+                background: url(../../../assets/img/color.svg) no-repeat
+                  center;
+              }
+            }
+          }
+        }
+
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 15px;
+        border: 1px solid yellow;
+        background-color: white;
+        height: 870px;
+        width: 412px;
+        padding: 1rem;
+        header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          figure {
+            border: 0px solid white;
+            background: url(../../../assets/img/Overlay+Border+Shadow+OverlayBlur.png)
+              no-repeat center / cover;
+            height: 112px;
+            width: 112px;
+            margin: 0;
+          }
+          button.mode {
+            border: 0px solid none;
+            border-radius: 15px;
+            background: url(../../../assets/img/mode-light.svg) no-repeat
+              center / cover;
+            height: 32px;
+            width: 89px;
+            margin: 0;
+          }
+        }
+      }
+    </style>
   </head>
 
   <body>
-
-    
     <div id="vanta-bg"></div>
 
-    
     <a class="btn-home" href="../" title="Volver al menú">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -38,18 +164,98 @@
         <div class="card">
           <img src="../../../assets/img/logo-js.png" alt="JavaScript Logo" />
         </div>
-        <h4>
-          Crea y manipula un objeto vehículo con propiedades.
-        </h4>
+        <h4>Crea y manipula un objeto vehículo con propiedades.</h4>
       </header>
 
-      
       <section class="content-section">
-        <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/design/PhiKNsYY1EGhaJ2Qp25evh/07-object-vehicle?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+        <div class="vehicle">
+          <header>
+            <figure class="logo"></figure>
+            <button class="mode"></button>
+          </header>
+          <nav>
+            <button class="prev"></button>
+            <figure class="brand"></figure>
+            <button class="next"></button>
+          </nav>
+          <div>
+            <figure class="model"></figure>
+            <figure class="reference"></figure>
+            <figure class="color"></figure>
+          </div>
+        </div>
       </section>
     </main>
 
-    
+    <script>
+      //Elements
+      const vhc = document.querySelector(".vehicle");
+      const mode = document.querySelector(".mode");
+      const lbrand = document.querySelector(".brand");
+      const lmodel = document.querySelector(".model");
+      const lrefer = document.querySelector(".reference");
+      const lcolor = document.querySelector(".color");
+
+
+      let index = 0;
+
+const vehicles = {
+    attrs: [
+        { brand: 'McLaren', refer: '720S', model: '2023', color: 'Blue', image: '../../../assets/img/McLaren72052023blue.png' },
+        { brand: 'Ferrari', refer: 'F8 Tributo', model: '2023', color: 'Red', image: '../../../assets/img/FerrariF8Tributo2023Red.png' },
+        { brand: 'Porsche', refer: '911 GT3 RS', model: '2024', color: 'Dark Grey', image: '../../../assets/img/Porche911GT3RS2024darkgrey.png' },
+        { brand: 'Aston Martin', refer: 'Valkyrie', model: '2023', color: 'White', image: '../../../assets/img/AstonMartinVakyrie2023White.png' },
+        { brand: 'Nissan', refer: 'GT-R', model: '2024', color: 'Orange', image: '../../../assets/img/NissanGT-R2024Orange.png' }
+    ]
+};
+
+
+
+      //Detect Dark Mode
+      const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
+      const updateTheme = (e) => vhc.classList.toggle("dark", e.matches);
+      if (darkMode.addEventListener) {
+        darkMode.addEventListener("change", updateTheme);
+      } else {
+        darkMode.addListener(updateTheme);
+      }
+      updateTheme(darkMode);
+
+      //events
+      mode.addEventListener("click", function () {
+        vhc.classList.toggle("dark");
+      });
+
+
+      class Vehicle {
+        constructor(brand, refer, model, color, image) {
+          this.brand = brand;
+          this.refer = refer;
+          this.model = model;
+          this.color = color;
+          this.image = image;
+          this.displayData();
+        }
+        displayData() {
+          lbrand.textContent = this.brand;
+          lmodel.textContent = this.model;
+          lrefer.textContent = this.refer;
+          lcolor.textContent = this.color;
+          
+        }
+
+      }
+
+
+      new Vehicle(vehicles.attrs[0].brand,
+                  vehicles.attrs[0].refer,
+                  vehicles.attrs[0].model,
+                  vehicles.attrs[0].color,
+                  vehicles.attrs[0].image);
+
+      
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script>
@@ -58,12 +264,12 @@
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
         color: 0xffd700,
-        backgroundColor: 0x000000
+        backgroundColor: 0x000000,
       });
     </script>
   </body>
