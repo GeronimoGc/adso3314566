@@ -86,22 +86,19 @@
               padding: 0;
               display: flex;
               align-items: end;
-              justify-content:  center;
+              justify-content: center;
               padding-bottom: 5px;
               height: 80px;
               width: 120px;
               &.model {
-                background: url(../../../assets/img/model.svg) no-repeat
-                  center;
-                  
+                background: url(../../../assets/img/model.svg) no-repeat center;
               }
               &.reference {
-                background: url(../../../assets/img/referrarl.svg)
-                  no-repeat center;
+                background: url(../../../assets/img/referrarl.svg) no-repeat
+                  center;
               }
               &.color {
-                background: url(../../../assets/img/color.svg) no-repeat
-                  center;
+                background: url(../../../assets/img/color.svg) no-repeat center;
               }
             }
           }
@@ -196,20 +193,50 @@
       const lrefer = document.querySelector(".reference");
       const lcolor = document.querySelector(".color");
 
+      const lnext = document.querySelector(".next");
+      const lprev = document.querySelector(".prev");
 
       let index = 0;
 
-const vehicles = {
-    attrs: [
-        { brand: 'McLaren', refer: '720S', model: '2023', color: 'Blue', image: '../../../assets/img/McLaren72052023blue.png' },
-        { brand: 'Ferrari', refer: 'F8 Tributo', model: '2023', color: 'Red', image: '../../../assets/img/FerrariF8Tributo2023Red.png' },
-        { brand: 'Porsche', refer: '911 GT3 RS', model: '2024', color: 'Dark Grey', image: '../../../assets/img/Porche911GT3RS2024darkgrey.png' },
-        { brand: 'Aston Martin', refer: 'Valkyrie', model: '2023', color: 'White', image: '../../../assets/img/AstonMartinVakyrie2023White.png' },
-        { brand: 'Nissan', refer: 'GT-R', model: '2024', color: 'Orange', image: '../../../assets/img/NissanGT-R2024Orange.png' }
-    ]
-};
-
-
+      const vehicles = {
+        attrs: [
+          {
+            brand: "McLaren",
+            refer: "720S",
+            model: "2023",
+            color: "Blue",
+            image: "../../../assets/img/McLaren72052023blue.png",
+          },
+          {
+            brand: "Ferrari",
+            refer: "F8 Tributo",
+            model: "2023",
+            color: "Red",
+            image: "../../../assets/img/FerrariF8Tributo2023Red.png",
+          },
+          {
+            brand: "Porsche",
+            refer: "911 GT3 RS",
+            model: "2024",
+            color: "Dark Grey",
+            image: "../../../assets/img/Porche911GT3RS2024darkgrey.png",
+          },
+          {
+            brand: "Aston Martin",
+            refer: "Valkyrie",
+            model: "2023",
+            color: "White",
+            image: "../../../assets/img/AstonMartinVakyrie2023White.png",
+          },
+          {
+            brand: "Nissan",
+            refer: "GT-R",
+            model: "2024",
+            color: "Orange",
+            image: "../../../assets/img/NissanGT-R2024Orange.png",
+          },
+        ],
+      };
 
       //Detect Dark Mode
       const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
@@ -226,7 +253,6 @@ const vehicles = {
         vhc.classList.toggle("dark");
       });
 
-
       class Vehicle {
         constructor(brand, refer, model, color, image) {
           this.brand = brand;
@@ -241,19 +267,16 @@ const vehicles = {
           lmodel.textContent = this.model;
           lrefer.textContent = this.refer;
           lcolor.textContent = this.color;
-          
         }
-
       }
 
-
-      new Vehicle(vehicles.attrs[0].brand,
-                  vehicles.attrs[0].refer,
-                  vehicles.attrs[0].model,
-                  vehicles.attrs[0].color,
-                  vehicles.attrs[0].image);
-
-      
+      new Vehicle(
+        vehicles.attrs[0].brand,
+        vehicles.attrs[0].refer,
+        vehicles.attrs[0].model,
+        vehicles.attrs[0].color,
+        vehicles.attrs[0].image,
+      );
     </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
