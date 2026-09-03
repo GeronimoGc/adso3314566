@@ -253,6 +253,30 @@
         vhc.classList.toggle("dark");
       });
 
+      lnext.addEventListener("click", function () {
+        index = (index + 1) % vehicles.attrs.length;
+        console.log(index);
+        car.brand = vehicles.attrs[index].brand;
+        car.model = vehicles.attrs[index].model;
+        car.refer = vehicles.attrs[index].refer;
+        car.color = vehicles.attrs[index].color;
+        car.displayData();
+      });
+
+lprev.addEventListener("click", function () {
+    const totalItems = vehicles.attrs.length;
+    index = (index - 1 + totalItems) % totalItems; 
+    
+    console.log(index);
+    
+    car.brand = vehicles.attrs[index].brand;
+    car.model = vehicles.attrs[index].model;
+    car.refer = vehicles.attrs[index].refer;
+    car.color = vehicles.attrs[index].color;
+    
+    car.displayData();
+});
+
       class Vehicle {
         constructor(brand, refer, model, color, image) {
           this.brand = brand;
@@ -270,12 +294,12 @@
         }
       }
 
-      new Vehicle(
-        vehicles.attrs[0].brand,
-        vehicles.attrs[0].refer,
-        vehicles.attrs[0].model,
-        vehicles.attrs[0].color,
-        vehicles.attrs[0].image,
+      car = new Vehicle(
+        vehicles.attrs[index].brand,
+        vehicles.attrs[index].refer,
+        vehicles.attrs[index].model,
+        vehicles.attrs[index].color,
+        vehicles.attrs[index].image,
       );
     </script>
 
