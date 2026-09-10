@@ -12,204 +12,318 @@
     />
 
     <style>
-            .content-section {
-              height: fit-content !important;
-              overflow-y: visible !important;
-            }
-            main {
-              max-height: fit-content;
-            }
-            body {
-              overflow-y: scroll;
-            }
-
-            div.vehicle {
-              margin-left: auto;
-              margin-right: auto;
-              border-radius: 15px;
-              border: 1px solid #e0e0e0;
-              background-color: #ffffff;
-              height: 870px;
-              width: 412px;
-              padding: 1rem;
-              transition: background-color 0.3s ease, border-color 0.3s ease;
-
-              header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                figure {
-                  border: 0px solid white;
-                  background: url(../../../assets/img/07-vehicle/logo.png)
-                    no-repeat center / cover;
-                  height: 112px;
-                  width: 112px;
-                  margin: 0;
-                }
-                button.mode {
-                  border: 0px solid none;
-                  border-radius: 15px;
-                  background: url(../../../assets/img/07-vehicle/light/mode-light.svg) no-repeat center;
-                  background-position-y: 40%;
-                  height: 32px;
-                  width: 89px;
-                  margin: 0;
-                  cursor: pointer;
-                }
-              }
-
-              nav {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-top: 20px;
-
-                figure.brand {
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  height: 54px;
-                  width: 258px;
-                  border: 1px solid #d0d0d0;
-                  border-radius: 15px;
-                  background-color: #f0f0f0;
-                  color: #333333;
-                  font-weight: bold;
-                }
-
-                button {
-                  width: 44px;
-                  height: 44px;
-                  border: none;
-                  cursor: pointer;
-                  transition: transform 0.4s ease-in;
-                  border-radius: 50px;
-                  &.prev {
-                    background: url(../../../assets/img/07-vehicle/light/prev-ligth.svg)
-                      no-repeat center;
-
-                    &:hover {
-                      transform: translateX(-12px);
-                    }
-                  }
-                  &.next {
-                    background: url(../../../assets/img/07-vehicle/light/nex-ligth.svg)
-                      no-repeat center;
-                    &:hover {
-                      transform: translateX(12px);
-                    }
-                  }
-                }
-              }
-
-              div.attributes {
-                align-items: center;
-                display: flex;
-                justify-content: space-between;
-                margin-top: 12px;
-                figure {
-                  margin: 0;
-                  padding: 0;
-                  display: flex;
-                  align-items: end;
-                  justify-content: center;
-                  padding-bottom: 5px;
-                  height: 80px;
-                  width: 120px;
-                  color: #333333;
-                  font-weight: 500;
-                  &.model {
-                    background: url(../../../assets/img/07-vehicle/light/model-ligth.svg) no-repeat center;
-                  }
-                  &.reference {
-                    background: url(../../../assets/img/07-vehicle/light/referrals-ligth.svg) no-repeat center;
-                  }
-                  &.color {
-                    background: url(../../../assets/img/07-vehicle/light/color-ligth.svg) no-repeat center;
-                  }
-                }
-              }
-
-              div.car-container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 30px;
-                width: 100%;
-                height: 250px;
-                border-radius: 12px;
-                background: url(../../../assets/img/07-vehicle/light/background-ligth.svg) no-repeat center / cover;
-                transition: background 0.3s ease;
-
-                img {
-                  max-width: 100%;
-                  max-height: 100%;
-                  object-fit: contain;
-                  transition: transform 0.3s ease, filter 0.3s ease;
-                  border: 0px solid black;
-                  border-radius: 0;
-                  width: 50%;
-                  margin: auto;
-                  
-
+      .content-section {
+        height: fit-content !important;
+        overflow-y: visible !important;
+      }
+      main {
+        max-height: fit-content;
+      }
+      body {
+        overflow-y: scroll;
       }
 
-                  &:hover {
-                    transform: scale(1.05);
-                  }
-                }
+      div.vehicle {
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 15px;
+        border: 1px solid #e0e0e0;
+        background-color: #ffffff;
+        height: 870px;
+        width: 412px;
+        padding: 1rem;
+        transition:
+          background-color 0.3s ease,
+          border-color 0.3s ease;
+
+        header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          figure {
+            border: 0px solid white;
+            background: url(../../../assets/img/07-vehicle/logo.png) no-repeat
+              center / cover;
+            height: 112px;
+            width: 112px;
+            margin: 0;
+          }
+          button.mode {
+            border: 0px solid none;
+            border-radius: 15px;
+            background: url(../../../assets/img/07-vehicle/light/mode-light.svg)
+              no-repeat center;
+            background-position-y: 40%;
+            height: 32px;
+            width: 89px;
+            margin: 0;
+            cursor: pointer;
+            transition: transform 0.4s ease-in;
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
+        }
+
+        nav {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 20px;
+
+          figure.brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 54px;
+            width: 258px;
+            border: 1px solid #d0d0d0;
+            border-radius: 15px;
+            background-color: #f0f0f0;
+            color: #333333;
+            font-weight: bold;
+          }
+
+          button {
+            width: 44px;
+            height: 44px;
+            border: solid 1px black;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: transform 0.4s ease-in;
+            &.prev {
+              background: url(../../../assets/img/07-vehicle/light/prev-light.svg)
+                no-repeat center;
+
+              &:hover {
+                transform: translateX(-12px);
               }
-
-              &.dark {
-                background-color: #171a27;
-                border-color: #333333;
-
-                div.car-container {
-                  background: url(../../../assets/img/07-vehicle/dark/background-ligth.svg) no-repeat center / cover;
-                  img {
-                    filter: drop-shadow(0px 10px 15px rgba(255, 255, 255, 0.1));
-                  }
-                }
-
-                header {
-                  button.mode {
-                    background: url(../../../assets/img/07-vehicle/dark/mode-dark.svg) no-repeat center;
-                    background-position-y: 40%;
-                  }
-                }
-
-                nav {
-                  figure.brand {
-                    border: 1px solid rgb(65, 68, 79);
-                    background-color: rgb(23, 26, 39);
-                    color: white;
-                  }
-
-                  button {
-                    &.prev {
-                      background: url(../../../assets/img/07-vehicle/dark/prev-dark.svg) no-repeat center;
-                    }
-                    &.next {
-                      background: url(../../../assets/img/07-vehicle/dark/next-dark.svg) no-repeat center;
-                    }
-                  }
-                }
-
-                div.attributes {
-                  figure {
-                    color: white;
-                    &.model {
-                      background: url(../../../assets/img/07-vehicle/dark/model-dark.svg) no-repeat center;
-                    }
-                    &.reference {
-                      background: url(../../../assets/img/07-vehicle/dark/referrarl-dark.svg) no-repeat center;
-                    }
-                    &.color {
-                      background: url(../../../assets/img/07-vehicle/dark/color-dark.svg) no-repeat center;
-                    }
-                  }
-                }
+            }
+            &.next {
+              background: url(../../../assets/img/07-vehicle/light/nex-light.svg)
+                no-repeat center;
+              &:hover {
+                transform: translateX(12px);
               }
+            }
+          }
+        }
+
+        div.attributes {
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 12px;
+          figure {
+            transition: transform 0.4s ease-in;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+            padding-bottom: 5px;
+            height: 80px;
+            width: 120px;
+            color: #333333;
+            font-weight: 500;
+            transition: transform 0.4s ease-in;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            &.model {
+              background: url(../../../assets/img/07-vehicle/light/model-light.svg)
+                no-repeat center;
+            }
+            &.reference {
+              background: url(../../../assets/img/07-vehicle/light/referrals-light.svg)
+                no-repeat center;
+            }
+            &.color {
+              background: url(../../../assets/img/07-vehicle/light/color-light.svg)
+                no-repeat center;
+            }
+          }
+        }
+
+        div.car-container {
+          display: flex;
+          justify-content: center;
+          align-items: end;
+          margin-top: 30px;
+          width: 100%;
+          height: 362px;
+          border-radius: 12px;
+          padding: 0;
+          background: url(../../../assets/img/07-vehicle/light/background-light.svg)
+            repeat center / cover;
+
+          img#car-image {
+            margin: 0 !important;
+            padding: 0;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition:
+              transform 0.3s ease,
+              filter 0.3s ease;
+            border: 0px solid black;
+            border-radius: 0;
+            width: 50%;
+            margin: auto;
+            box-shadow: 0 0 20px rgba(255, 217, 0, 0);
+            filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.1));
+          }
+          div#carretera {
+            position: absolute;
+            width: 378px !important;
+            height: 50px;
+            margin: 0 !important;
+            padding: 0;
+            max-width: 100%;
+            max-height: 100%;
+
+            object-fit: contain;
+            transition:
+              transform 0.3s ease,
+              filter 0.3s ease;
+            border: 0px solid black;
+            border-radius: 0;
+            width: 50%;
+            margin: auto;
+            box-shadow: 0 0 20px rgba(255, 217, 0, 0);
+            filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.1));
+            background: url(../../../assets/img/07-vehicle/carretera\ 1.svg)
+              repeat;
+          }
+        }
+        menu {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0;
+          margin-top: 12px;
+          padding: 0;
+          width: 356px;
+          margin-left: auto;
+          margin-right: auto;
+          button {
+            width: 67px;
+            height: 52px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            transition: transform 0.4s ease-in;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            &.btn-on {
+              background: url(../../../assets/img/07-vehicle/light/on-light.svg)
+                no-repeat center / contain;
+            }
+            &.btn-forward {
+              background: url(../../../assets/img/07-vehicle/light/forw-light.svg)
+                no-repeat center / contain;
+            }
+            &.btn-stop {
+              background: url(../../../assets/img/07-vehicle/light/stop-light.svg)
+                no-repeat center / contain;
+            }
+            &.btn-backword {
+              background: url(../../../assets/img/07-vehicle/light/back-light.svg)
+                no-repeat center / contain;
+            }
+            &.btn-off {
+              background: url(../../../assets/img/07-vehicle/light/off-light.svg)
+                no-repeat center / contain;
+            }
+          }
+        }
+
+        &.dark {
+          background-color: #171a27;
+          border-color: #333333;
+
+          div.car-container {
+            background: url(../../../assets/img/07-vehicle/dark/background-dark.svg)
+              repeat center / cover;
+            img {
+              filter: drop-shadow(0px 10px 15px rgba(255, 255, 255, 0.1));
+            }
+          }
+
+          header {
+            button.mode {
+              transition: transform 0.4s ease-in;
+              background: url(../../../assets/img/07-vehicle/dark/mode-dark.svg)
+                no-repeat center;
+              background-position-y: 40%;
+              &:hover {
+                transform: scale(1.05);
+              }
+            }
+          }
+
+          nav {
+            figure.brand {
+              border: 1px solid rgb(65, 68, 79);
+              background-color: rgb(23, 26, 39);
+              color: white;
+            }
+
+            button {
+              &.prev {
+                background: url(../../../assets/img/07-vehicle/dark/prev-dark.svg)
+                  no-repeat center;
+              }
+              &.next {
+                background: url(../../../assets/img/07-vehicle/dark/next-dark.svg)
+                  no-repeat center;
+              }
+            }
+          }
+
+          div.attributes {
+            figure {
+              color: white;
+              &.model {
+                background: url(../../../assets/img/07-vehicle/dark/model-dark.svg)
+                  no-repeat center;
+              }
+              &.reference {
+                background: url(../../../assets/img/07-vehicle/dark/referrarl-dark.svg)
+                  no-repeat center;
+              }
+              &.color {
+                background: url(../../../assets/img/07-vehicle/dark/color-dark.svg)
+                  no-repeat center;
+              }
+            }
+          }
+
+          menu {
+            button {
+              &.btn-on {
+                background: url(../../../assets/img/07-vehicle/dark/on-dark.svg)
+                  no-repeat center / contain;
+              }
+              &.btn-forward {
+                background: url(../../../assets/img/07-vehicle/dark/forw-dark.svg)
+                  no-repeat center / contain;
+              }
+              &.btn-stop {
+                background: url(../../../assets/img/07-vehicle/dark/stop-dark.svg)
+                  no-repeat center / contain;
+              }
+              &.btn-backword {
+                background: url(../../../assets/img/07-vehicle/dark/back-dark.svg)
+                  no-repeat center / contain;
+              }
+              &.btn-off {
+                background: url(../../../assets/img/07-vehicle/dark/off-dark.svg)
+                  no-repeat center / contain;
+              }
+            }
+          }
+        }
+      }
     </style>
   </head>
 
@@ -256,8 +370,16 @@
             <figure class="color"></figure>
           </div>
           <div class="car-container">
+            <div id="carretera"></div>
             <img src="" alt="carro" id="car-image" />
           </div>
+          <menu>
+            <button class="btn-on"></button>
+            <button class="btn-forward"></button
+            ><button class="btn-stop"></button
+            ><button class="btn-backword"></button
+            ><button class="btn-off"></button>
+          </menu>
         </div>
       </section>
     </main>
@@ -271,9 +393,17 @@
       const lrefer = document.querySelector(".reference");
       const lcolor = document.querySelector(".color");
       const lcarImage = document.querySelector("#car-image");
+      const carContainer = document.querySelector(".car-container");
+      const carretera = document.querySelector("#carretera");
 
       const lnext = document.querySelector(".next");
       const lprev = document.querySelector(".prev");
+
+      const btnOn = document.querySelector(".btn-on");
+      const btnForw = document.querySelector(".btn-forward");
+      const btnStop = document.querySelector(".btn-stop");
+      const btnBack = document.querySelector(".btn-backword");
+      const btnOff = document.querySelector(".btn-off");
 
       let index = 0;
 
@@ -319,7 +449,6 @@
         ],
       };
 
-      // Detect Dark Mode
       const darkMode = window.matchMedia("(prefers-color-scheme: dark)");
       const updateTheme = (e) => vhc.classList.toggle("dark", e.matches);
       if (darkMode.addEventListener) {
@@ -329,7 +458,6 @@
       }
       updateTheme(darkMode);
 
-      // Events
       mode.addEventListener("click", function () {
         vhc.classList.toggle("dark");
       });
@@ -355,6 +483,7 @@
         car.displayData();
       });
 
+      // Clase Vehicle
       class Vehicle {
         constructor(brand, refer, model, color, image) {
           this.brand = brand;
@@ -362,8 +491,17 @@
           this.model = model;
           this.color = color;
           this.image = image;
+          this.isOn = false;
+          this.isMoving = false;
+          this.lastTimestamp = 0;
+          this.bgPos = 0;
+          this.bgCarrePos = 0;
+          this.speed = 0.2;
+          this.speedbg = 0.4;
+          this.isDirection = 1;
           this.displayData();
         }
+
         displayData() {
           lbrand.textContent = this.brand;
           lmodel.textContent = this.model;
@@ -371,17 +509,96 @@
           lcolor.textContent = this.color;
           lcarImage.src = this.image;
         }
+
+        PowerOn() {
+          if (!this.isOn) {
+            this.isOn = true;
+            vibrate();
+          }
+        }
+
+        forward() {
+          if (this.isOn) {
+            this.isMoving = true;
+            this.isDirection = 1;
+            lcarImage.style.transform = "scaleX(1)";
+          }
+        }
+
+        stop() {
+          this.isMoving = false;
+        }
+
+        backward() {
+          if (this.isOn) {
+            this.isMoving = true;
+            this.isDirection = -1;
+            lcarImage.style.transform = "scaleX(-1)";
+          }
+        }
+
+        powerOff() {
+          if (this.isOn) {
+            this.isOn = false;
+            this.isMoving = false;
+            this.isDirection = 1;
+            lcarImage.style.transform = "scaleX(1)";
+            vibrate();
+          }
+        }
       }
 
       let car = new Vehicle(
         vehicles.attrs[index].brand,
         vehicles.attrs[index].refer,
-        vehicles.attrs[index].model,
+        vehicles.attrs.model,
         vehicles.attrs[index].color,
         vehicles.attrs[index].image,
       );
-    </script>
 
+      btnOn.addEventListener("click", function () {
+        car.PowerOn();
+      });
+
+      btnForw.addEventListener("click", function () {
+        car.forward();
+      });
+
+      btnStop.addEventListener("click", function () {
+        car.stop();
+      });
+
+      btnBack.addEventListener("click", function () {
+        car.backward();
+      });
+
+      btnOff.addEventListener("click", function () {
+        car.powerOff();
+      });
+
+      function vibrate() {
+        if (!car.isOn) return;
+        const scale = car.isDirection === -1 ? "scaleX(-1)" : "scaleX(1)";
+        lcarImage.style.transform = `${scale} translate(0, ${5.5 * Math.sin(Date.now() / 25)}px)`;
+        requestAnimationFrame(vibrate);
+      }
+      function animate(timestamp) {
+        if (car.isOn && car.isMoving) {
+          const delta = timestamp - (car.lastTimestamp || timestamp);
+          car.lastTimestamp = timestamp;
+
+          car.bgPos -= car.speed * delta * car.isDirection;
+          car.bgCarrePos -= car.speedbg * delta * car.isDirection;
+          carContainer.style.backgroundPosition = `${car.bgPos}px center`;
+          carretera.style.backgroundPosition = `${car.bgCarrePos}px center`;
+        } else {
+          car.lastTimestamp = 0;
+        }
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script>
