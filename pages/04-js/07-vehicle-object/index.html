@@ -530,7 +530,7 @@
         }
 
         backward() {
-          if (this.isOn) {
+          if (this.isOn === !this.isMoving) {
             this.isMoving = true;
             this.isDirection = -1;
             lcarImage.style.transform = "scaleX(-1)";
@@ -538,7 +538,7 @@
         }
 
         powerOff() {
-          if (this.isOn) {
+          if (this.isOn  === !this.isMoving) {
             this.isOn = false;
             this.isMoving = false;
             this.isDirection = 1;
