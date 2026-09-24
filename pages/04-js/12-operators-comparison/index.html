@@ -10,6 +10,39 @@
       href="../../../assets/img/logo-js.png"
       type="image/x-icon"
     />
+    <style>
+        table.operators {
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin: 40px auto;
+            width: 380px;
+        }
+        table thead th {
+            background-color: #f0db4f;
+            color: #000c;
+        }
+        table th,
+        table td {
+            background-color: #fffc;
+            border: 1px solid #333;
+            color: #333;
+            padding: 6px;
+        }
+        table thead input {
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            padding: 8px;
+            width: 120px;
+        }
+        table tbody td:first-child {
+            font-size: 1rem;
+            text-align: center;
+        }
+        table tbody tr:nth-child(even) td {
+            background-color: #fff8;
+        }
+    </style>
   </head>
 
   <body>
@@ -45,11 +78,108 @@
 
       
       <section class="content-section">
-        
+        <table class="operators">
+                <thead>
+                    <tr>
+                        <th colspan="4">
+                            <input type="number" placeholder="X Value">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Operator</th>
+                        <th>Description</th>
+                        <th>Comparison</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>==</td>
+                        <td>Is Equal</td>
+                        <td>x==8</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>===</td>
+                        <td>Equal (value & type)</td>
+                        <td>x===5</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>!=</td>
+                        <td>Diferent</td>
+                        <td>x!=8</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>!==</td>
+                        <td>Diff (value & type)</td>
+                        <td>x!==5</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td>></td>
+                        <td>Greater than</td>
+                        <td>x>8</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td><</td>
+                        <td>Less than</td>
+                        <td>x<8</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td> >=</td>
+                        <td>Greater or Equal</td>
+                        <td>x>=8</td>
+                        <td class="rs"></td>
+                    </tr>
+                    <tr>
+                        <td> <= </td>
+                        <td>Less or Equal</td>
+                        <td>x<=8</td>
+                        <td class="rs"></td>
+                    </tr>
+                </tbody>
+            </table>
       </section>
     </main>
 
-    <
+    <script>
+        // results
+        const rss   = document.querySelectorAll('td.rs')
+        const input = document.querySelector('input')
+        // Events
+        input.oninput = () => {
+            if (input.value != '') {
+                if (input.value.length < 4) {
+                    // ==
+                    rss[0].innerText = (parseInt(input.value) == 8)
+                    // ===
+                    rss[1].innerText = (parseInt(input.value) === 5)
+                    // !=
+                    rss[2].innerText = (parseInt(input.value) != 8)
+                    // !==
+                    rss[3].innerText = (parseInt(input.value) !== 5)
+                    // >
+                    rss[4].innerText = (parseInt(input.value) > 8)
+                    // <
+                    rss[5].innerText = (parseInt(input.value) < 8)
+                    // >=
+                    rss[6].innerText = (parseInt(input.value) >= 8)
+                    // <=
+                    rss[7].innerText = (parseInt(input.value) <= 8)
+                } else {
+                    input.value = input.value.slice(0,-1)
+                }
+            } else {
+                for (let i = 0; i < rss.length; i++) {
+                    rss[i].innerText = ''
+                }
+            }
+        }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script>

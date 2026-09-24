@@ -10,14 +10,34 @@
       href="../../../assets/img/logo-js.png"
       type="image/x-icon"
     />
+
+    <style>
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+        strong,
+        output {
+          font-size: 1.6rem;
+        }
+        input {
+          border-radius: 0.4rem;
+          border: none;
+          padding: 0.4rem;
+          width: 100px;
+        }
+      }
+      h4 {
+        font-size: 1.4rem;
+        margin-block: 1.2rem;
+      }
+    </style>
   </head>
 
   <body>
-
-    
     <div id="vanta-bg"></div>
 
-    
     <a class="btn-home" href="../" title="Volver al menú">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -38,18 +58,73 @@
         <div class="card">
           <img src="../../../assets/img/logo-js.png" alt="JavaScript Logo" />
         </div>
-        <h4>
-          Define y usa bloques de código reutilizables.
-        </h4>
+        <h4>Define y usa bloques de código reutilizables.</h4>
       </header>
 
-      
       <section class="content-section">
-        
+        <h3>01- Function without params/args</h3>
+        <h4 class="greeting"></h4>
+        <h3>02- Function with params/args</h3>
+        <form>
+          <input
+            type="number"
+            id="n1"
+            min="1"
+            max="999"
+            placeholder="Number 1"
+          />
+          <strong>+</strong>
+          <input
+            type="number"
+            id="n2"
+            min="1"
+            max="999"
+            placeholder="Number 2"
+          />
+          <strong>=</strong>
+          <output></output>
+        </form>
+        <h3>03- Function return value</h3>
+        <h4 class="time"></h4>
       </section>
     </main>
+    <script>
+      // elements
+      const greeting = document.querySelector(".greeting");
+      const n1 = document.querySelector("#n1");
+      const n2 = document.querySelector("#n2");
+      const output = document.querySelector("output");
+      const time = document.querySelector(".time");
 
-    <
+      //01- Function without  parameters/arguments
+      function showGreeting() {
+        greeting.textContent = "Hello  JavaScript";
+      }
+      showGreeting();
+
+      //02- Function with parameters/arguent
+      function showSum(n1 = 1, n2) {
+        output.textContent = parseInt(n1) + parseInt(n2);
+      }
+
+      // Events
+
+      n1.addEventListener("input", () => {
+        showSum(n1.value, n2.value);
+      });
+      n2.addEventListener("input", () => {
+        showSum(n1.value, n2.value);
+      });
+
+      //03- Function return value
+      function showTime() {
+        const ndate = new Date;
+        const meridian =  (parseInt(ndate.getHours()) <= 12 ) ? "am" : "pm"; 
+        return `${ndate.getHours()}:${ndate.getMinutes()} ${meridian} `;
+      }
+      time.textContent = `Time: ${ShowTime()}`
+      time.style.zoom = 2;
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script>
@@ -58,12 +133,12 @@
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
         color: 0xffd700,
-        backgroundColor: 0x000000
+        backgroundColor: 0x000000,
       });
     </script>
   </body>
